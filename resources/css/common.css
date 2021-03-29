@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700|Noto+Sans+KR:400,500,700&subset=korean");
+html, body {
+	height: 100%;
+}
+
+body {
+	font-size: 10px;
+	font-family: "Noto Sans KR", sans-serif;
+	word-break: break-all;
+	-webkit-overflow-scrolling: touch;
+}
+
+html, body, select, input, button, textarea {
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+select, input, textarea {
+	font-size: 10px;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+/* 크롬 4–56 : placeholder style */
+input:-moz-placeholder {
+	color: #999;
+}
+
+/* 파이어폭스 4–18 : placeholder style */
+input::-moz-placeholder {
+	color: #999;
+}
+
+/* 파이어폭스 19–50 : placeholder style */
+input:-ms-input-placeholder {
+	color: #999;
+}
+
+/* 인터넷 익스플로러 10+ : placeholder style */
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+input:-ms-input-placeholder {
+	color: #999;
+}
+
+input::-ms-input-placeholder {
+	color: #999;
+}
+
+input::-moz-placeholder {
+	color: #999;
+}
+
+input::placeholder {
+	color: #999;
+}
+
+/* 파이어폭스 51+, 크롬 57+ : placeholder style */
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:not([disabled]):-webkit-autofill, input:not([disabled]):-webkit-autofill:hover, input:not([disabled]):-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, textarea:not([disabled]):-webkit-autofill, textarea:not([disabled]):-webkit-autofill:hover, textarea:not([disabled]):-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus, select:not([disabled]):-webkit-autofill, select:not([disabled]):-webkit-autofill:hover, select:not([disabled]):-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+input[disabled]:-internal-autofill-selected, input[disabled]:-webkit-autofill, input[disabled]:-webkit-autofill:hover, input[disabled]:-webkit-autofill:focus, input[readonly]:-internal-autofill-selected, input[readonly]:-webkit-autofill, input[readonly]:-webkit-autofill:hover, input[readonly]:-webkit-autofill:focus, textarea[disabled]:-internal-autofill-selected, textarea[disabled]:-webkit-autofill, textarea[disabled]:-webkit-autofill:hover, textarea[disabled]:-webkit-autofill:focus, textarea[readonly]:-internal-autofill-selected, textarea[readonly]:-webkit-autofill, textarea[readonly]:-webkit-autofill:hover, textarea[readonly]:-webkit-autofill:focus, select[disabled]:-internal-autofill-selected, select[disabled]:-webkit-autofill, select[disabled]:-webkit-autofill:hover, select[disabled]:-webkit-autofill:focus, select[readonly]:-internal-autofill-selected, select[readonly]:-webkit-autofill, select[readonly]:-webkit-autofill:hover, select[readonly]:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 1000px #f8f8f8 inset !important;
+}
+
+input:-internal-autofill-selected {
+	background-color: transparent;
+}
+
+.offscreen {
+	display: inline-block;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	font-size: 1px;
+	line-height: 0;
+	clip: rect(1px 1px 1px 1px);
+}
+
+a, button, select, input, textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:focus, a:active, button:focus, button:active, select:focus, select:active, input:focus, input:active, textarea:focus, textarea:active {
+	/*outline: 1px solid $colorBlack;
+		outline-offset: -1px;*/
+	outline: none;
+}
+
+label {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
