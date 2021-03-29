@@ -1,0 +1,1440 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>이화여대 - 퍼블리싱 현황판</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="Robots" content="noindex, nofollow" />
+    <meta name="msapplication-TileColor" content="#000000">
+
+    <!-- front ui
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <link rel="stylesheet" href="http://csscrown.com/common.ia/gl-1.0/glim.css">
+    <script src="http://csscrown.com/common.ia/gl-1.0/glim.js"></script>
+
+    <script>
+
+    </script>
+</head>
+<body data-theme-color="#045738">
+    <div class="ia-wrapper">
+        <div class="ia-header-wrapper">
+            <div class="ia-section">
+                <h1 class="ia-h1">이화여대 - 퍼블리싱 현황판</h1>
+            </div>
+        </div>
+        <div class="ia-container">
+            <div class="ia-content">
+
+                <div class="ia-content-body">
+
+                    <!-- Note -->
+                    <section class="ia-section">
+                        <div class="ia-note-wrap">
+                            <div class="ia-box ia-box-note">
+                                <div class="ia-box-header">
+                                    <h4 class="ia-h4">Note</h4>
+                                </div>
+                                <div class="ia-box-body">
+                                    <ul class="ia-desc">
+                                        <li>※ 유형 표시방법 - Html, LP : Layer Popup, WP : Window Popup</li>
+                                        <li>※ IA 기준으로 목록 업데이트 필요</li>
+                                        <li>1. 진척관리 - 최초 완료표시 기준으로 날짜를 표시</li>
+                                        <li>2. 수정관리 - 최조 완료표시 날짜에 [YY-MM-DD / (br) YY-MM-DD]수정날짜를 추가한다. </li>
+                                        <li>3. 결함관리 - 신규/수정/삭제 이슈가 있는 경우 소스코드와 비고란에 동일한 주석문구를 표시한다. (주석표기 예시 - 181130 홍길동 작업내용 수정)</li>
+                                        <li>4. 최조 완료시 상태항목에 [완료]</li>
+                                        <li>5. 상태값에 [완료] 문구 등록시 완료페이지로 표시됨. </li>
+                                        <li>6. Row 컬러 상태
+                                            <span class="state row-done-new">최신완료 </span>
+                                            <span class="state row-done-update">기존완료지만 추가수정됨 </span>
+                                            <span class="state row-done">이전완료 </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //Note -->
+
+                    <!-- Total -->
+                    <section class="ia-section">
+                        <div class="ia-section-body">
+                            <div class="ia-h4 ia-total-legend">
+                                <span class="item c-last-date"><em>최종수정일 : </em><em class="value">1</em> /</span>
+                                <span class="item c-total"><em>총 페이지 : </em><em class="value">30</em> /</span>
+                                <span class="item c-done"><em>총 완료 : </em><em class="value">1</em> (</span>
+                                <span class="item c-done-new"><em>신규완료 : </em><em class="value">1</em> /</span>
+                                <span class="item c-done-update"><em>수정완료 : </em><em class="value">1</em> )</span>
+                            </div>
+                            <div class="ia-graph">
+                                <ul class="graph"></ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //Total -->
+
+                    <!-- Note -->
+                    <section class="ia-section">
+                        <div class="ia-note-wrap">
+                            <div class="ia-box ia-box-note">
+                                <div class="ia-box-header">
+                                    <h4 class="ia-h4">개발시 참고사항</h4>
+                                </div>
+                                <div class="ia-box-body">
+                                    <ul class="ia-desc">
+                                        <li>- 언어 셋에 따라 국문/영문 css 별도 적용되어 개발 시 &lt;html&gt; 태그 언어별 적용 필요 국문 : lang="ko" / 영문 : lang="en"
+                                            <span style="display: block; padding-left: 10px">ㄴ 별도 적용 예시 : 텍스트 자간, calender 요일 영문 표기</span>
+                                        </li>
+                                        <li>- front_ui.js에서 사용되는 함수 public으로 호출이 필요한경우 ewha.ui.front.함수명() 호출;
+                                            <span style="display: block; padding-left: 10px">ㄴ public으로 호출 가능한 함수는 js파일 Public 접근 가능한 변수 함수로 선언 주석영역 참고</span>
+                                        </li>
+                                        <li>- 페이지 최하단까지 스크롤 시, TOP버튼 노출로 인해 컨텐츠가 가려지는 경우 .contents-section의 마지막 자식구조에 bottom-gap class 추가</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //Note -->
+
+                    <!-- Guide -->
+                    <section class="ia-section ia-section-list">
+                        <div class="ia-section-header">
+                            <h2 class="ia-h2"><a href="#this" class="ui-accordion-toggle">가이드</a></h2>
+                            <div class="ia-legend">
+                                <span class="item"><em>총 페이지 : </em><em class="legend-total">30</em> /</span>
+                                <span class="item c-done"><em>완료 : </em><em class="legend-complete">1</em> /</span>
+                                <span class="item"><em>진척률 : </em><em class="legend-process">3%</em></span>
+                            </div>
+                        </div>
+                        <div class="ia-section-body">
+                            <div class="ia-tbl-wrap">
+                                <table>
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col" class="col-1depth">1Depth</th>
+                                            <th scope="col" class="col-2depth">2Depth</th>
+                                            <th scope="col" class="col-3depth">3Depth</th>
+                                            <th scope="col">URL</th>
+                                            <th scope="col" class="col-date">날짜</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">비고<a href="javascript:;" class="btn-memo-all">Comment Toggle</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">포틀릿(로그인 전)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__01_portlet.html" target="_blank">html/00_guide/01_layout__01_portlet.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">포틀릿(로그인 후)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__01_portlet___02_logout.html" target="_blank">html/00_guide/01_layout__01_portlet___02_logout.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___01.html" target="_blank">html/00_guide/01_layout__02_sub_layout___01.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(+ 헤더 우측 버튼)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___02_header_button.html" target="_blank">html/00_guide/01_layout__02_sub_layout___02_header_button.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(+ 하단 고정버튼)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___03_bottom_fixed.html" target="_blank">html/00_guide/01_layout__02_sub_layout___03_bottom_fixed.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(검색)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___04_search.html" target="_blank">html/00_guide/01_layout__02_sub_layout___04_search.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(tab - 스크롤)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___05_tab____01_scroll.html" target="_blank">html/00_guide/01_layout__02_sub_layout___05_tab____01_scroll.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(tab - 균등형)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___05_tab____02_equal.html" target="_blank">html/00_guide/01_layout__02_sub_layout___05_tab____02_equal.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(tab - noscript)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___05_tab____03_noscript.html" target="_blank">html/00_guide/01_layout__02_sub_layout___05_tab____03_noscript.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">01_layout</td>
+                                            <td class="col-3depth" data-label="3Depth">서브(tab - noscript bottom fixed)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/01_layout__02_sub_layout___05_tab____04_noscript_fixed_bottom.html" target="_blank">html/00_guide/01_layout__02_sub_layout___05_tab____04_noscript_fixed_bottom.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">02_dialog_popup</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/02_dialog_popup.html" target="_blank">html/00_guide/02_dialog_popup.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16/ <br>21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [201224]
+                                                    <br>- full 팝업 tab script 없는 type 추가
+                                                    <br>- 공지사항 : 이미지형 팝업 수정
+                                                    <br><br>[210104]
+                                                    <br>- 공지사항 : 설문형 팝업 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">03_toast_message</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/03_toast_message.html" target="_blank">html/00_guide/03_toast_message.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">04_button</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/04_button.html" target="_blank">html/00_guide/04_button.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16 / <br>21-01-08</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210108]
+                                                    <br>- header 우측에 들어가는 icon버튼 추가
+                                                    <br>- 공지사항 link btn 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">05_form</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/05_form.html" target="_blank">html/00_guide/05_form.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16 / <br>21-02-08</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210104]
+                                                    <br>- calendar 추가
+                                                    <br><br>[210108]
+                                                    <br>- 카테고리 검색 form 추가
+                                                    <br><br>[210208]
+                                                    <br>- 첨부파일 버튼 UI 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">06_fold</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/06_fold.html" target="_blank">html/00_guide/06_fold.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16 / <br>21-02-10</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210104]
+                                                    <br>- 2020.12.09 설계 추가 케이스 추가작업
+                                                    <br><br>[210107]
+                                                    <br>- fold case 추가
+                                                    <br><br>[210115]
+                                                    <br>- 신청락커 fold contents selectbox 있는 case 추가
+                                                    <br>- 환불신청 내역 추가
+                                                    <br><br>[210210]
+                                                    <br>- 성적 fold case 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">07_list</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/07_list.html" target="_blank">html/00_guide/07_list.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16/<br>21-01-25</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210107]
+                                                    <br>- qna 상태별 아이콘 class 수정
+                                                    <br><br>[210120]
+                                                    <br>- 장학금신청 목록 추가
+                                                    <br><br>[210125]
+                                                    <br>- qna list 날짜 우측정렬 case 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">08_card</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/08_card.html" target="_blank">html/00_guide/08_card.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210104]
+                                                    <br>- 데이터 없는 경우 공통 추가
+                                                    <br><br>[210107]
+                                                    <br>- 타이틀+보조정보 제공형 컨텐츠 영역 button type 추가
+                                                    <br><br>[210115]
+                                                    <br>- 조회성 항목별 정보 제공형 우측 상태값 표시 유형 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">09_table</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/09_table.html" target="_blank">html/00_guide/09_table.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16/ <br>21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210107]
+                                                    <br>- tbl-col 테이블 여백 수정 확인용 case 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">10_loading</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/10_loading.html" target="_blank">html/00_guide/10_loading.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210107]
+                                                    <br>- progress loading case 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">Guide</td>
+                                            <td class="col-2depth" data-label="2Depth">99_이미지확대보기(webview)</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/00_guide/99_image_zoom.html" target="_blank">html/00_guide/99_image_zoom.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //Guide -->
+
+                    <!-- 공통 -->
+                    <section class="ia-section ia-section-list">
+                        <div class="ia-section-header">
+                            <h2 class="ia-h2"><a href="#this" class="ui-accordion-toggle">공통</a></h2>
+                            <div class="ia-legend">
+                                <span class="item"><em>총 페이지 : </em><em class="legend-total">30</em> /</span>
+                                <span class="item c-done"><em>완료 : </em><em class="legend-complete">1</em> /</span>
+                                <span class="item"><em>진척률 : </em><em class="legend-process">3%</em></span>
+                            </div>
+                        </div>
+                        <div class="ia-section-body">
+                            <div class="ia-tbl-wrap">
+                                <table>
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col" class="col-1depth">1Depth</th>
+                                            <th scope="col" class="col-2depth">2Depth</th>
+                                            <th scope="col" class="col-3depth">3Depth</th>
+                                            <th scope="col">URL</th>
+                                            <th scope="col" class="col-date">날짜</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">비고<a href="javascript:;" class="btn-memo-all">Comment Toggle</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">레이어팝업</td>
+                                            <td class="col-3depth" data-label="3Depth">
+                                                ㄴ IA.09.00.04.0. 장문형입력
+                                                <br>ㄴ IA.09.00.00.2. 주소찾기
+
+                                            </td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/common_layer_popup.html" target="_blank">html/01_common/common_layer_popup.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.09.00.02.0. 조회기간 아님</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/IA.09.00.02.0.html" target="_blank">html/01_common/IA.09.00.02.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16/ <br>21-02-10</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210104]
+                                                    <br>- ico-nodata period class 추가
+                                                    <br><br>[210210]
+                                                    <br>- no-data-list 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.09.00.02.0. 조회기간 아님(영문)</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/IA.09.00.02.0_eng.html" target="_blank">html/01_common/IA.09.00.02.0_eng.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16/ <br>21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210104]
+                                                    <br>- ico-nodata period class 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.09.00.03.0. 대상아님(국문)</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/IA.09.00.03.0.html" target="_blank">html/01_common/IA.09.00.03.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-16</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.10.00.00.0. 에러용 페이지</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/IA.10.00.00.0.html" target="_blank">html/01_common/IA.10.00.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.02.00.00.0. 로그인</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/IA.02.00.00.0.html" target="_blank">html/01_common/IA.02.00.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-08</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">공통</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.05.00.00.0. 알림 목록</td>
+                                            <td class="col-3depth" data-label="3Depth"></td>
+                                            <td class="col-url" data-label="URL"><a href="html/01_common/IA.05.00.00.0.html" target="_blank">html/01_common/IA.05.00.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //공통 -->
+
+                    <!-- 포틀릿 -->
+                    <section class="ia-section ia-section-list">
+                        <div class="ia-section-header">
+                            <h2 class="ia-h2"><a href="#this" class="ui-accordion-toggle">포틀릿</a></h2>
+                            <div class="ia-legend">
+                                <span class="item"><em>총 페이지 : </em><em class="legend-total">30</em> /</span>
+                                <span class="item c-done"><em>완료 : </em><em class="legend-complete">1</em> /</span>
+                                <span class="item"><em>진척률 : </em><em class="legend-process">3%</em></span>
+                            </div>
+                        </div>
+                        <div class="ia-section-body">
+                            <div class="ia-tbl-wrap">
+                                <table>
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col" class="col-1depth">1Depth</th>
+                                            <th scope="col" class="col-2depth">2Depth</th>
+                                            <th scope="col" class="col-3depth">3Depth</th>
+                                            <th scope="col">URL</th>
+                                            <th scope="col" class="col-date">날짜</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">비고<a href="javascript:;" class="btn-memo-all">Comment Toggle</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">포틀릿 사용 팝업</td>
+                                            <td class="col-3depth" data-label="3Depth">
+                                                모바일신분증
+                                                <br>ㄴ IA.06.01.00.1. QR 모바일신분증_01_카드없을시
+                                                <br>ㄴ IA.06.01.00.1. QR 모바일신분증_02_QRCODE
+                                                <br>ㄴ IA.06.01.00.2. 모바일신분증본인인증
+
+                                                <br><br>게시판설정
+                                                <br>ㄴ IA.06.02.00.1. 게시판설정
+                                                <br>ㄴ IA.06.02.00.2. 조회게시글 건수 설정
+
+                                                <br><br>나만의 식단 설정
+                                                <br>ㄴ IA.06.04.00.1. 나만의 식단 메뉴 설정
+                                                <br>IA.06.04.00.2. 선호식당 설정
+                                                <br>IA.06.04.00.3. 식당표시 순서변경
+
+                                                <br><br>오늘의 일정
+                                                <br>IA.06.05.00.1. 오늘의 일정
+                                                <br>IA.06.05.00.2. 상세일정조회
+                                                <br>IA.06.05.00.3. 일정 추가
+
+                                                <br><br>마이메뉴 설정
+                                                <br>IA.06.07.00.1. 마이메뉴 설정
+                                                <br>IA.06.07.00.2. 마이메뉴 선택
+                                                <br>IA.06.07.00.2. 마이메뉴 선택(검색 결과)
+                                                <br>IA.06.07.00.3. 마이메뉴 순서변경
+                                            </td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/portlet_layer_popup.html" target="_blank">html02_portlet/portlet_layer_popup.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24/<br>21-02-02</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210107]
+                                                    <br>- 마이메뉴 설정, 마이메뉴 선택 팝업 icon url 수정 가능하도록 background-images inline style 지정
+                                                    <br><br>[210115]
+                                                    <br>- IA.06.01.00.1 안내 folding 디자인 수정으로 DOM구조 변경
+                                                    <br><br>[210202]
+                                                    <br>- IA.06.01.00.1. QR 모바일신분증 프로필 이미지 없는 경우, no-img class 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">포틀릿 사용 팝업(영문)</td>
+                                            <td class="col-3depth" data-label="3Depth">
+                                                나만의 식단 설정
+                                                <br>ㄴ IA.06.04.00.2. 선호식당 설정(영문)
+                                            </td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/portlet_layer_popup_en.html" target="_blank">html02_portlet/portlet_layer_popup_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">포틀릿 사용 알럿 팝업</td>
+                                            <td class="col-3depth" data-label="3Depth">
+                                                모바일신분증
+                                                <br>ㄴ 신분증 발급 가능 확인
+                                                <br>ㄴ 신분증 발급 확인
+                                                <br>ㄴ 인증실패
+                                                <br>ㄴ 1일1회발급 안내
+                                                <br>ㄴ 신분증 발급 1개 기기초과
+
+                                                <br><br>게시판설정
+                                                <br>ㄴ 조회게시글 건수 설정 (설정중단)
+                                            </td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/portlet_alert_popup.html" target="_blank">html02_portlet/portlet_alert_popup.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">main</td>
+                                            <td class="col-3depth" data-label="3Depth">로그인 전</td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/IA.01.00.01.0.html" target="_blank">html02_portlet/IA.01.00.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24/ <br>21-02-10</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210107]
+                                                    <br>- 관련서비스 icon url 수정 가능하도록 background-images inline style 지정
+                                                    <br>- 로그인 전 포틀릿 더보기 메뉴 삭제, 노출 항목 수정
+                                                    <br><br>[210115]
+                                                    <br>- 마이메뉴 해상도 ~ 767px에서만 swiper 실행 되도록 페이지 상단 script 수정
+                                                    <br><br>[210210]
+                                                    <br>- footer 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">main</td>
+                                            <td class="col-3depth" data-label="3Depth">로그인 후</td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/IA.01.00.01.0_login.html" target="_blank">html02_portlet/IA.01.00.01.0_login.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24/ <br>21-02-10</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210107]
+                                                    <br>- 마이메뉴, 관련서비스 icon url 수정 가능하도록 background-images inline style 지정
+                                                    <br><br>[210115]
+                                                    <br>- 마이메뉴 해상도 ~ 767px에서만 swiper 실행 되도록 페이지 상단 script 수정
+                                                    <br>- 마이메뉴 li에 등록된 메뉴가 없는 경우 no-menu class 추가
+                                                    <br><br>[210210]
+                                                    <br>- footer 추가
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">공지사항 </td>
+                                            <td class="col-3depth" data-label="3Depth">목록</td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/IA.06.02.01.0.html" target="_blank">html02_portlet/IA.06.02.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">공지사항 </td>
+                                            <td class="col-3depth" data-label="3Depth">상세(텍스트 타입)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/IA.06.02.02.0.html" target="_blank">html02_portlet/IA.06.02.02.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">공지사항 </td>
+                                            <td class="col-3depth" data-label="3Depth">상세(이미지 타입)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/IA.06.02.02.0_2.html" target="_blank">html02_portlet/IA.06.02.02.0_2.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">포틀릿</td>
+                                            <td class="col-2depth" data-label="2Depth">공지사항 </td>
+                                            <td class="col-3depth" data-label="3Depth">상세(첨부파일)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/02_portlet/IA.06.02.02.0_3.html" target="_blank">html02_portlet/IA.06.02.02.0_3.html</a></td>
+                                            <td class="col-date" data-label="날짜">20-12-24</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //포틀릿 -->
+
+                    <!-- 마이유레카 -->
+                    <section class="ia-section ia-section-list">
+                        <div class="ia-section-header">
+                            <h2 class="ia-h2"><a href="#this" class="ui-accordion-toggle">마이유레카</a></h2>
+                            <div class="ia-legend">
+                                <span class="item"><em>총 페이지 : </em><em class="legend-total">30</em> /</span>
+                                <span class="item c-done"><em>완료 : </em><em class="legend-complete">1</em> /</span>
+                                <span class="item"><em>진척률 : </em><em class="legend-process">3%</em></span>
+                            </div>
+                        </div>
+                        <div class="ia-section-body">
+                            <div class="ia-tbl-wrap">
+                                <table>
+                                    <caption></caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col" class="col-1depth">1Depth</th>
+                                            <th scope="col" class="col-2depth">2Depth</th>
+                                            <th scope="col" class="col-3depth">3Depth</th>
+                                            <th scope="col">URL</th>
+                                            <th scope="col" class="col-date">날짜</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">비고<a href="javascript:;" class="btn-memo-all">Comment Toggle</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">마이유레카 사용 팝업 </td>
+                                            <td class="col-3depth" data-label="3Depth">
+                                                IA.07. 나의정보
+                                                <br>ㄴ IA.07.00.00.1. 비밀번호변경
+                                                <br><br>IA.08. 설정
+                                                <br>ㄴ IA.08.01.01.0. 포틀릿설정
+                                                <br><br>IA.12. 교과
+                                                <br>ㄴ IA.12.02.00.1. 강의평가 기본문항 평균
+                                                <br><br>IA.13. 수강/채플
+                                                <br>ㄴ IA.13.04.00.1. 보충여석조회(A1)
+                                            </td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/mypage_layer_popup.html" target="_blank">html/03_mypage/mypage_layer_popup.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">마이유레카 사용 팝업(영문) </td>
+                                            <td class="col-3depth" data-label="3Depth">
+                                                IA.08. 설정
+                                                <br>ㄴ IA.08.01.01.0. 포틀릿설정(영문)
+                                                <br><br>IA.13. 수강/채플
+                                                <br>ㄴ IA.13.04.00.0. 훈련학점일일보충신청(A1)(E)
+                                            </td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/mypage_layer_popup_en.html" target="_blank">html/03_mypage/mypage_layer_popup_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">I.A.04. 전체메뉴</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.04.00.00.0. 전체메뉴</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.04.00.00.0.html" target="_blank">html/03_mypage/IA.04.00.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">I.A.04. 전체메뉴</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.04.00.00.0. 전체메뉴(검색)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.04.00.00.0_search.html" target="_blank">html/03_mypage/IA.04.00.00.0_search.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.07. 나의정보 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.07.01.00.0. 나의 정보</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.07.01.00.0.html" target="_blank">html/03_mypage/IA.07.01.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.08. 설정</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.08.01.00.0. 앱설정</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.08.01.00.0.html" target="_blank">html/03_mypage/IA.08.01.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.11. 등록금</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.11.01.00.0. 등록금고지서</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.11.01.00.0.html" target="_blank">html/03_mypage/IA.11.01.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.12. 교과</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.12.01.00.0. 강의평가</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.12.01.00.0.html" target="_blank">html/03_mypage/IA.12.01.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.12. 교과</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.12.01.01.0. 강의평가 평가화면(select)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.12.01.01.0.html" target="_blank">html/03_mypage/IA.12.01.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.12. 교과</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.12.02.01.0. 학수번호 검색(검색결과)(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.12.02.01.0_en.html" target="_blank">html/03_mypage/IA.12.02.01.0_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.12. 교과</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.12.02.00.0. 학수번호별 강의평가조회(검색완료)(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.12.02.00.0_en.html" target="_blank">html/03_mypage/IA.12.02.00.0_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.13. 수강/채플</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.13.01.00.0. 수강신청 내역조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.13.01.00.0.html" target="_blank">html/03_mypage/IA.13.01.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.13. 수강/채플</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.13.03.00.1. 훈련학점 좌석조회_(T)정규과정좌석(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.13.03.00.1_en.html" target="_blank">html/03_mypage/IA.13.03.00.1_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.13. 수강/채플</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.13.05.00.0. 훈련학점결석누계조회(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.13.05.00.0_en.html" target="_blank">html/03_mypage/IA.13.05.00.0_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.14. 성적</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.14.02.00.1. 개인성적조회_(T) 학기성적(정렬)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.14.02.00.1.html" target="_blank">html/03_mypage/IA.14.02.00.1.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.14. 성적</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.14.03.00.1. 개인이수학점조회_(T)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.14.03.00.1.html" target="_blank">html/03_mypage/IA.14.03.00.1.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.14. 성적</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.14.03.00.3. 개인이수학점조회_(T) 각종시험</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.14.03.00.3.html" target="_blank">html/03_mypage/IA.14.03.00.3.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.14. 성적</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.14.03.00.3. 개인이수학점조회_(T) 각종시험(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.14.03.00.3_en.html" target="_blank">html/03_mypage/IA.14.03.00.3_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.15. 장학 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.15.01.04.0. 기본사항_B타입(추가입력형)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.15.01.04.0.html" target="_blank">html/03_mypage/IA.15.01.04.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.15. 장학 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.15.01.05.0. 자기소개(default)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.15.01.05.0.html" target="_blank">html/03_mypage/IA.15.01.05.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.15. 장학 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.15.02.00.2. 장학금신청결과조회_(T)수혜내역</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.15.02.00.2.html" target="_blank">html/03_mypage/IA.15.02.00.2.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.15. 장학 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.15.02.00.2. 장학금신청결과조회_(T)수혜내역(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.15.02.00.2_en.html" target="_blank">html/03_mypage/IA.15.02.00.2_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.15. 장학 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.15.03.00.0. 성적우수장학금관련석차조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.15.03.00.0.html" target="_blank">html/03_mypage/IA.15.03.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-04/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.16. 학적 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.16.05.00.1. 학과/전공결정신청및결과조회_(T) 신청(선택가능)(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.16.05.00.1_en.html" target="_blank">html/03_mypage/IA.16.05.00.1_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.16. 학적 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.16.05.00.3. 학과/전공결정신청및결과조회_(T) 결과조회(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.16.05.00.3_en.html" target="_blank">html/03_mypage/IA.16.05.00.3_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.18. 학생종합정보 </td>
+                                            <td class="col-3depth" data-label="3Depth">IA.18.01.00.0. 지도교수조회(E)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.18.01.00.0_en.html" target="_blank">html/03_mypage/IA.18.01.00.0_en.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.19. 공간예약</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.19.01.00.0. 빠른 예약 유형 선택</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.19.01.00.0.html" target="_blank">html/03_mypage/IA.19.01.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.19. 공간예약</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.19.01.01.0. 공간 먼저 선택</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.19.01.01.0.html" target="_blank">html/03_mypage/IA.19.01.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.19. 공간예약</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.19.01.04.0. 공간선택</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.19.01.04.0.html" target="_blank">html/03_mypage/IA.19.01.04.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.19. 공간예약</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.19.01.06.0. 신청서등록(교직원)(type1)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.19.01.06.0.html" target="_blank">html/03_mypage/IA.19.01.06.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.19. 공간예약</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.19.02.00.0. 공간사용신청결과조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.19.02.00.0.html" target="_blank">html/03_mypage/IA.19.02.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.20. 기숙사</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.20.01.01.0. 약관동의</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.20.01.01.0.html" target="_blank">html/03_mypage/IA.20.01.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.20. 기숙사</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.20.02.00.0. 입사지원신청결과조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.20.02.00.0.html" target="_blank">html/03_mypage/IA.20.02.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.20. 기숙사</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.20.03.00.0. 외박신고 목록</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.20.03.00.0.html" target="_blank">html/03_mypage/IA.20.03.00.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.21. 사회체육</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.21.01.00.1. 프로그램수강신청_(T) 수강신청</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.21.01.00.1.html" target="_blank">html/03_mypage/IA.21.01.00.1.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.21. 사회체육</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.21.01.00.2. 프로그램수강신청_(T) 신청내역</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.21.01.00.2.html" target="_blank">html/03_mypage/IA.21.01.00.2.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.21. 사회체육</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.21.01.00.3. 프로그램수강신청_(T) 결제정보조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.21.01.00.3.html" target="_blank">html/03_mypage/IA.21.01.00.3.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07/ <br>21-01-15</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con">
+                                                    [210115]
+                                                    <br>- 안내 folding 디자인 수정으로 DOM구조 변경
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.21. 사회체육</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.21.01.01.0. 프로그램/강좌선택_센터+분류선택(센터선택후)</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.21.01.01.0.html" target="_blank">html/03_mypage/IA.21.01.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.21. 사회체육</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.21.01.03.0. 프로그램/강좌선택_강좌선택(신청회원수/최대정원수)(타입D)_1</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.21.01.03.0.html" target="_blank">html/03_mypage/IA.21.01.03.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.22. 이화에바란다</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.22.02.02.0. Q&A 조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.22.02.02.0.html" target="_blank">html/03_mypage/IA.22.02.02.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.22. 이화에바란다</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.22.04.01.0. 친절/불친절행정서비스 등록</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.22.04.01.0.html" target="_blank">html/03_mypage/IA.22.04.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.22. 이화에바란다</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.22.04.02.0. 친절/불친절행정서비스 조회</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.22.04.02.0.html" target="_blank">html/03_mypage/IA.22.04.02.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-num" data-label="번호"></td>
+                                            <td class="col-1depth" data-label="1Depth">마이유레카</td>
+                                            <td class="col-2depth" data-label="2Depth">IA.22. 이화에바란다</td>
+                                            <td class="col-3depth" data-label="3Depth">IA.22.06.01.0. 온라인악성게시물 공지사항</td>
+                                            <td class="col-url" data-label="URL"><a href="html/03_mypage/IA.22.06.01.0.html" target="_blank">html/03_mypage/IA.22.06.01.0.html</a></td>
+                                            <td class="col-date" data-label="날짜">21-01-07</td>
+                                            <td class="col-complete" data-label="상태">완료</td>
+                                            <td class="col-memo" data-label="비고">
+                                                <button type="button" class="btn-memo">Comment</button>
+                                                <div class="col-memo-con"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- //마이유레카 -->
+
+                </div>
+            </div>
+        </div>
+        <script>
+
+
+
+        </script>
+    </div>
+</body>
+</html>
