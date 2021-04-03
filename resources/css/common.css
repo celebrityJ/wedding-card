@@ -815,6 +815,17 @@ h3.title .spot, h4.title .spot {
 	height: 100%;
 }
 
+.contents-container .map-wrap .link-map {
+	display: inline-block;
+	background-color: #f8eede;
+	border-radius: 15px;
+	height: 30px;
+	padding: 0 15px;
+	line-height: 30px;
+	color: #444;
+	font-size: 1.3rem;
+}
+
 .contents-container .map-wrap .address {
 	font-size: 1.4rem;
 }
@@ -825,10 +836,22 @@ h3.title .spot, h4.title .spot {
 	border-radius: 15px;
 	height: 30px;
 	padding: 0 15px;
-	margin-top: 8px;
 	line-height: 30px;
 	color: #444;
 	font-size: 1.3rem;
+}
+
+.contents-container .map-wrap .btn-wrap {
+	display: flex;
+	margin-top: 13px;
+}
+
+.contents-container .map-wrap .btn-wrap a {
+	flex: 1;
+}
+
+.contents-container .map-wrap .btn-wrap a + a {
+	margin-left: 6px;
 }
 
 .footer-container {

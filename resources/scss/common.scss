@@ -701,6 +701,18 @@ h3.title, h4.title{
 			}
 		}
 
+		.link-map{
+			display: inline-block;
+			//border: 1px solid $pointColorPurple;
+			background-color: $pointColorPurple;
+			border-radius: 15px;
+			height: 30px;
+			padding: 0 15px;
+			line-height: 30px;
+			color: #444;
+			font-size: 1.3rem;
+		}
+
 		.address{
 			font-size: 1.4rem;
 		}
@@ -712,10 +724,22 @@ h3.title, h4.title{
 			border-radius: 15px;
 			height: 30px;
 			padding: 0 15px;
-			margin-top: 8px;
 			line-height: 30px;
 			color: #444;
 			font-size: 1.3rem;
+		}
+
+		.btn-wrap{
+			display: flex;
+			margin-top: 13px;
+
+			a{
+				flex: 1;
+
+				+ a{
+					margin-left: 6px;
+				}
+			}
 		}
 	}
 
