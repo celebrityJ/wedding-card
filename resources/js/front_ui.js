@@ -19,7 +19,6 @@ $(document).ready(function (event) {
 	setAosAnimation();
 	setUIDialog(' [data-popup-trigger]', ' .ui-dialog-contents');;
 	gallerySwiperInit();
-	clipboard();
 	mapApi();
 	// mapMarker();
 });
@@ -69,13 +68,26 @@ function mapApi(){
 * desc : clipboard
 */
 function clipboard(){
-	var clipboard = new Clipboard('.btn-copy');
+	/*var clipboard = new Clipboard('.btn-copy');
 	clipboard.on('success', function(e) {
 		console.log(e);
 	});
 	clipboard.on('error', function(e) {
 		console.log(e);
-	});
+	});*/
+
+
+
+}
+
+//복사버튼 스크립트
+function copyToClipboard(element) {
+	var $temp = $("<input>");
+	$("body").append($temp);
+	$temp.val($(element).text()).select();
+	document.execCommand("copy");
+	$temp.remove();
+	alert("복사되었습니다."); //Optional Alert,
 }
 
 /**********************************************************************************
