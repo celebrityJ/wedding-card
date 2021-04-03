@@ -374,7 +374,7 @@ h3.title, h4.title{
 		vertical-align: top;
 		z-index: 2;
 
-		@include desktop{
+		/*@include desktop{
 			width: 185px;
 			height: 38px;
 			background: url(../images/pc/common/logo_white.png) 0 0 no-repeat;
@@ -390,7 +390,7 @@ h3.title, h4.title{
 			}
 			background: url(../images/mo/common/logo_white.png) 0 0 / 100% no-repeat;
 		}
-
+*/
 		a{
 			display: block;
 			width: 100%;
@@ -497,7 +497,7 @@ h3.title, h4.title{
 				content: '';
 				display: block;
 				height: 100%;
-				background: url(../images/mo/ui/btn_menu_toggle.png) 0 0 / 60px 30px no-repeat;
+				//background: url(../images/mo/ui/btn_menu_toggle.png) 0 0 / 60px 30px no-repeat;
 			}
 		}
 	}
@@ -541,7 +541,7 @@ h3.title, h4.title{
 			}
 
 			.logo{
-				background-image: url(../images/mo/common/logo.png);
+				//background-image: url(../images/mo/common/logo.png);
 			}
 
 			.gnb{
@@ -739,14 +739,14 @@ h3.title, h4.title{
 							height: 12px;
 							right: 41px;
 							width: 13px;
-							background: url(../images/pc/ui/ui_arr_service_link.png) 0 0 no-repeat;
+							//background: url(../images/pc/ui/ui_arr_service_link.png) 0 0 no-repeat;
 						}
 
 						@include mobile{
 							width: 9px;
 							height: 8px;
 							right: 20px;
-							background: url(../images/mo/ui/ui_arr_service_link.png) 0 0 / 100% no-repeat;
+							//background: url(../images/mo/ui/ui_arr_service_link.png) 0 0 / 100% no-repeat;
 						}
 					}
 
@@ -839,7 +839,7 @@ h3.title, h4.title{
 .contents-container{
 	overflow: hidden;
 	position: relative;
-	padding-top: 80px;
+	padding-top: 50px;
 
 	.contents-inner{
 		width: 100%;
@@ -860,26 +860,39 @@ h3.title, h4.title{
 				margin-bottom: 58px;
 
 				.title{
+					padding: 0 20px;
 					margin-bottom: 24px;
 				}
 
+				.img-box{
+
+					img{
+						display: block;
+						width: 100%;
+					}
+				}
+
 				.desc-box{
-					margin: 0 0 15px 0;
+					margin: 30px 0 15px 0;
+					text-align: center;
 
 					.sub-title{
 						display: block;
-						color: #333;
+						color: #222;
 						margin-bottom: 9px;
-						font-size: 1.7rem;
-						line-height: 2.1rem;
+						font-size: 1.5rem;
+						line-height: 2rem;
 
 						.spot{
 							color: $pointColorBlue;
+							font-size: 1.7rem;
 							font-weight: 700;
 						}
 					}
 
 					.desc{
+						margin-top: 15px;
+						color: #222;
 						font-size: 1.4rem;
 						line-height: 1.9rem;
 					}
@@ -911,7 +924,7 @@ h3.title, h4.title{
 								display: block;
 								width: 100px;
 								height: 100px;
-								background: $pointColorBlue url(../images/pc/common/ico_behind.png) 0 0 no-repeat;
+								//background: $pointColorBlue url(../images/pc/common/ico_behind.png) 0 0 no-repeat;
 								margin-left: 600px;
 								opacity: 0;
 							}
@@ -976,7 +989,7 @@ h3.title, h4.title{
 										height: 75px;
 										background: {
 											color: $pointColorBlue;
-											image: url(../images/mo/common/ico_behind.png);
+											//image: url(../images/mo/common/ico_behind.png);
 											size: 225px 75px;
 											repeat: no-repeat;
 										}
@@ -1209,7 +1222,7 @@ h3.title, h4.title{
 				@include desktop{
 					height: 745px;
 					padding-top: 126px;
-					background: #3c3f45 url(../images/pc/common/bg_needus1.jpg) top right / cover no-repeat;
+					//background: #3c3f45 url(../images/pc/common/bg_needus1.jpg) top right / cover no-repeat;
 				}
 
 				@include mobile{
@@ -1218,7 +1231,7 @@ h3.title, h4.title{
 						bottom: 50px;
 					}
 					min-height: 678px;
-					background: #3c3f45 url(../images/mo/common/bg_needus1.jpg) top right / cover no-repeat;
+					//background: #3c3f45 url(../images/mo/common/bg_needus1.jpg) top right / cover no-repeat;
 				}
 
 				.contents-inner {
@@ -1339,7 +1352,7 @@ h3.title, h4.title{
 					max-width: $contentsWidth;
 					height: 290px;
 					margin: -129px auto 0;
-					background: url(../images/pc/common/bg_needus2.jpg) center/ cover no-repeat;
+					//background: url(../images/pc/common/bg_needus2.jpg) center/ cover no-repeat;
 
 					&.aos-animate{
 						transition-delay: .2s;
@@ -1348,7 +1361,7 @@ h3.title, h4.title{
 
 				@include mobile{
 					height: 200px;
-					background: url(../images/mo/common/bg_needus2.jpg) center/ cover no-repeat;
+					//background: url(../images/mo/common/bg_needus2.jpg) center/ cover no-repeat;
 				}
 
 				.btn-visit{
@@ -1396,14 +1409,14 @@ h3.title, h4.title{
 							width: 14px;
 							height: 5px;
 							margin-top: 16px;
-							background: url(../images/pc/ui/ui_btn_arr.png) 0 0 / 100% no-repeat;
+							//background: url(../images/pc/ui/ui_btn_arr.png) 0 0 / 100% no-repeat;
 						}
 
 						@include mobile{
 							width: 15px;
 							height: 6px;
 							margin-top: 7px;
-							background: url(../images/mo/ui/ui_btn_arr.png) 0 0 / 100% no-repeat;
+							//background: url(../images/mo/ui/ui_btn_arr.png) 0 0 / 100% no-repeat;
 						}
 					}
 
@@ -1457,298 +1470,7 @@ h3.title, h4.title{
 
 			.prod-swiper-wrap{
 				.prod-list-box{
-					.prod-box{
-						@include desktop{
-							width: 400px;
-						}
-
-						@include mobile{
-							width: 225px;
-						}
-
-						.prod-thumb{
-							position: relative;
-
-							.img-box{
-								background:{
-									position: 0 0;
-									size: 100%;
-									repeat: no-repeat;
-								};
-
-								@include desktop{
-									width: 400px;
-									height: 300px;
-								}
-
-								@include mobile{
-									width: 225px;
-									height: 175px;
-								}
-							}
-
-							.btn-preview{
-								position: absolute;
-								right: 0;
-								bottom: 0;
-
-								@include desktop{
-									width: 100px;
-									height: 100px;
-									padding: 31px 0 0 22px;
-									@include calc_letter_spacing(-50, 1.5rem);
-									line-height: 2rem;
-									font-weight: 600;
-									color: $pointColorBlue;
-									background-color: $textColorWhite;
-									opacity: 0;
-									transition: .23s ease-in-out;
-									box-shadow: 0 5px 20px rgba(13, 49, 157, 0.1)  ;
-									-webkit-box-shadow: 0 5px 20px rgba(13, 49, 157, 0.1)  ;
-									-moz-box-shadow: 0 5px 20px rgba(13, 49, 157, 0.1)  ;
-									border: 0;
-									box-sizing: border-box;
-
-									&::before,
-									&::after {
-										box-sizing: inherit;
-										content: '';
-										position: absolute;
-
-										// Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-										border: 2px solid transparent;
-										width: 0;
-										height: 0;
-									}
-
-									// This covers the top & right borders (expands right, then down)
-									&::before {
-										top: 0;
-										left: 0;
-									}
-
-									// And this the bottom & left borders (expands left, then up)
-									&::after {
-										top: 0;
-										left: 0;
-									}
-								}
-
-								@include mobile{
-									left: 0;
-									top: 0;
-									font-size: 0;
-								}
-
-								&.disabled{
-									display: none;
-								}
-							}
-
-							&:hover{
-								.btn-preview{
-									opacity: 1;
-									color: $pointColorBlue;
-									transition: .23s ease-in-out;
-
-									// Hover styles
-									&:before,
-									&:after {
-										width: 100%;
-										height: 100%;
-									}
-
-									&:before {
-										border-top-color: $pointColorBlue; // Make borders visible
-										border-right-color: $pointColorBlue;
-										transition:
-												width 0.25s ease-out, // Width expands first
-												height 0.25s ease-out 0.25s; // And then height
-									}
-
-									&:after {
-										border-bottom-color: $pointColorBlue; // Make borders visible
-										border-left-color: $pointColorBlue;
-										transition: // Animate height first, then width
-												height 0.25s ease-out,
-												width 0.25s ease-out 0.25s;
-									}
-								}
-
-							}
-						}
-
-						.prod-detail{
-							padding-right: 20px;
-
-							@include desktop{
-								margin-top: 29px;
-							}
-
-							@include mobile{
-								margin-top: 24px;
-							}
-
-							.prod-type{
-								display: block;
-								font-weight: 600;
-								color: $pointColorBlue;
-
-								@include desktop{
-									margin-bottom: 9px;
-									@include calc_letter_spacing(-50, 1.3rem);
-								}
-
-								@include mobile{
-									margin-bottom: 11px;
-									font-size: 1.1rem;
-								}
-							}
-
-							.prod-title{
-								display: block;
-
-								@include desktop{
-									margin-bottom: 14px;
-									@include calc_letter_spacing(-50, 2rem);
-								}
-
-								@include mobile{
-									margin-bottom: 15px;
-									font-size: 1.6rem;
-								}
-							}
-
-							.prod-desc{
-								@include desktop{
-									min-height: 60px;
-									@include calc_letter_spacing(-50, 1.4rem);
-									line-height: 2rem;
-								}
-
-								@include mobile{
-									font-size: 1.2rem;
-									line-height: 1.8rem;
-									min-height: 72px;
-								}
-							}
-						}
-
-						.prod-btn{
-							@include desktop {
-								margin-top: 25px;
-							}
-
-							@include mobile {
-								margin-top: 21px;
-							}
-
-							.btn-buy{
-								font-weight: 600;
-
-								@include desktop{
-									@include calc_letter_spacing(-50, 1.5rem);
-								}
-
-								@include mobile{
-									@include calc_letter_spacing(-25, 1.3rem);
-								}
-
-								&:after{
-									content: '';
-									display: inline-block;
-									vertical-align: top;
-									transition: all .35s;
-
-									@include desktop {
-										width: 11px;
-										height: 10px;
-										margin: {
-											top: 4px;
-											left: 14px;
-										}
-										background: url(../images/pc/ui/ui_btn_buy_arr.png) 0 0 no-repeat;
-									}
-
-									@include mobile {
-										width: 10px;
-										height: 9px;
-										margin: {
-											top: 5px;
-											left: 10px;
-										}
-										background: url(../images/mo/ui/ui_btn_buy_arr.png) 0 0 / 100% no-repeat;
-									}
-								}
-
-								&.disabled{
-									opacity: .3;
-									cursor: default;
-								}
-
-								&:hover{
-									&:after{
-										transition: all .23s;
-										transform: translateX(10px);
-									}
-								}
-							}
-						}
-
-						&:first-child{
-							.prod-thumb{
-								.img-box{
-									@include desktop{
-										background-image: url(../images/pc/common/thumb_prod1.jpg);
-									}
-									@include mobile{
-										background-image: url(../images/mo/common/thumb_prod1.jpg);
-									}
-								}
-							}
-						}
-
-						&:nth-child(2){
-							.prod-thumb{
-								.img-box{
-									@include desktop{
-										background-image: url(../images/pc/common/thumb_prod2.jpg);
-									}
-									@include mobile{
-										background-image: url(../images/mo/common/thumb_prod2.jpg);
-									}
-								}
-							}
-						}
-
-						&.coming-soon{
-							.prod-thumb{
-								.img-box{
-									@include desktop{
-										background-image: url(../images/pc/common/thumb_coming_soon.jpg);
-									}
-									@include mobile{
-										background-image: url(../images/mo/common/thumb_coming_soon.jpg);
-									}
-								}
-							}
-							.btn-preview{
-								display: none;
-							}
-						}
-
-						@include mobile{
-							&:last-child{
-								margin-right: 20px;
-							}
-						}
-
-						@include tablet{
-							&:last-child{
-								margin-right: 20px;
-							}
-						}
-					}
+					.prod-box{}
 				}
 
 				@include desktop {
