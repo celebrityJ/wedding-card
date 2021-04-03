@@ -21,7 +21,7 @@ $(document).ready(function (event) {
 	gallerySwiperInit();
 	clipboard();
 	mapApi();
-	mapMarker();
+	// mapMarker();
 });
 
 $(window).on('resize', function () {
