@@ -6,14 +6,9 @@
  update date: 2020/09/21
 */
 
-$(function () {
+$(document).ready(function (event) {
 	setAosAnimation();
-
-	gnbAnchorPos();
-
-	moGnbOnOFF();
-	// $('.js-scrollspy').scrollSpy({ elName:'' });
-
+	setUIDialog(' [data-popup-trigger]', ' .ui-dialog-contents');;
 	gallerySwiperInit();
 
 	$('.js-animation').each(function(){
@@ -46,8 +41,6 @@ _scrollTop = $(window).scrollTop();
 $(window).scroll(function () {
 	_scrollTop = scrollTop;
 	scrollTop = $(window).scrollTop();
-
-	moFixedHeader();
 });
 
 /**********************************************************************************
@@ -98,127 +91,7 @@ function resize(){
 
 	if(_ww !== ww){
 		// console.log("resize")
-		gnbAnchorPos();
 	}
-}
-
-/**********************************************************************************
- ** moFixedHeader
- ***********************************************************************************/
-/*
-* date :  20200921
-* last :  20200921
-* name :  moFixedHeader ()
-* desc :  mo gnb fixed
-* pram :
-* scroll content fix
-*/
-function moFixedHeader() {
-	var mainHeight = $('.header-container').outerHeight();
-
-	if ($(window).scrollTop() > mainHeight) {
-		$('.js-gnb-wrap').addClass('is-fixed');
-	}else {
-		if(!$('.js-gnb-wrap').hasClass('is-open')){
-			$('.js-gnb-wrap').removeClass('is-fixed');
-		}
-	}
-}
-
-/**********************************************************************************
- ** gnbAnchorPos
- ***********************************************************************************/
-/*
-* date : 20200909
-* last : 20200921
-* name : gnbAnchorPos(  )
-* pram : parents (default : .contents-container)
-* desc : gnb Anchor pc/mo position
-*/
-function gnbAnchorPos() {
-	// anchor tab scroll pos
-	setTimeout(function() {
-		$('.js-scrollspy-content').each(function () {
-			var originContPcTop, originContMoTop;
-
-			if($(window).width() > 768){ // only pc
-				originContPcTop = $(this).offset().top - 100;
-
-				if (!$(this).hasClass('aos-animate') && $(this).attr('data-aos') !== undefined) {
-					originContPcTop -= parseInt($(this).css('transform').split(',')[5]);
-				}
-				$(this).data("originPcTop", originContPcTop);
-				// console.log('pc', originContPcTop)
-			}else if($(window).width() <= 768){ // only mo
-				originContMoTop = $(this).offset().top - 80;
-				if ($(this).hasClass('aos-animate') && $(this).attr('data-aos') !== undefined) {
-					originContMoTop -= parseInt($(this).css('transform').split(',')[5]);
-
-					if($(this).hasClass('support-wrap')){
-						originContMoTop += 20;
-					}
-				}
-
-				$(this).data("originMoTop", originContMoTop);
-				// console.log('mo', originContMoTop);
-			}
-		});
-
-		$('.js-gnb-wrap').find('.js-item').on('click', function (e) {
-			var tgAnchorName = $(this).attr('href').split("#")[1];
-
-			$('.js-scrollspy-content').each(function () {
-				tgAnchorCont = $(this).attr('id');
-
-				if (tgAnchorName === tgAnchorCont) {
-					var contPos;
-
-					if($(window).width() >= 769) { // only pc
-						// console.log('pc')
-						contPos = $("#" + tgAnchorCont).data("originPcTop");
-						// console.log('pc move', contPos);
-					}else{
-						// console.log('mo')
-						contPos = $("#" + tgAnchorCont).data("originMoTop");
-						// console.log('mo move', contPos);
-					}
-
-					$('html, body').stop().animate({scrollTop: contPos}, 500);
-				}
-			});
-
-			e.preventDefault();
-		});
-	},500);
-}
-
-/**********************************************************************************
- ** moGnbOnOFF
- ***********************************************************************************/
-/*
-* date : 20200921
-* last : 20200921
-* name : moGnbOnOFF(  )
-* pram :
-* desc : mobile menu on/off
-*/
-
-function moGnbOnOFF(){
-	$('.js-btn-nav').on('click', function(){
-		if($('.js-gnb-wrap').hasClass('is-open')){
-			$('.js-gnb-wrap').removeClass('is-open').addClass('is-close');
-
-			if($(window).scrollTop() <= 60){
-				$('.js-gnb-wrap').removeClass('is-fixed');
-			}
-		}else{
-			$('.js-gnb-wrap').addClass('is-fixed is-open').removeClass('is-close');
-		}
-	});
-
-	$('.js-gnb-wrap').find('.gnb .gnb-list .item').on('click', function(){
-		if($('.js-gnb-wrap').hasClass('is-open')) $('.js-gnb-wrap').removeClass('is-open').addClass('is-close');
-	});
 }
 
 /**********************************************************************************
@@ -255,4 +128,156 @@ function setAosAnimation(){
 			offset: 30,
 		});
 	}, 500);
+}
+
+/**
+ * 레이어 팝업 설정 (jquery UI Dialog)
+ * @param selector {string} 레이어 팝업으로 생성할 컨테이너 셀렉터(default: .ui-dialog-contents)
+ * @param btnSelector {string} 레이어 팝업을 띄우기 위한 버튼 셀렉터(default: .btn-dialog)
+ */
+var _dialogCount=0;
+function setUIDialog(btnSelector, selector) {
+	selector = selector || '.ui-dialog-contents';
+	btnSelector = btnSelector || '[data-popup-trigger]';
+	if ($(selector).length > 0) {
+		// title : 타이틀 스타일 추가를 위해 html 소스로 전달
+		$.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+			_title: function (title) {
+				if (this.options.title) {
+					title.html(this.options.title);
+				}
+			}
+		}));
+
+		$(selector).each(function (index) {
+			if ( $(this).parents('.ui-dialog').length > 0 ) return false;
+
+			var dialogClass, containerId, dialogId, containerClasses, scrollTop;
+
+			containerId = $(this).data('container');
+			containerClasses = 'ui-dialog-container';
+			dialogClass = '';
+
+			if (containerId === undefined) {
+				containerId = 'body';
+			}
+
+			if ($(this).data('class') !== undefined) {
+				if (isNaN(parseInt($(this).data('class')))) {
+					dialogClass = $(this).data('class');
+				} else {
+					dialogClass = 'auto';
+				}
+			}
+
+			dialogId = containerId.replace('#', '') + 'Dialog' + _dialogCount;
+			$(containerId).append('<div id="' + dialogId + '" class="' + containerClasses + '"></div>');
+
+			_dialogCount++;
+
+			$(this).dialog({
+				appendTo: containerId + ' #' + dialogId,
+				autoOpen: false,
+				modal: true,
+				resizable: false,
+				draggable: false,
+				minHeight: 'none',
+				classes: {
+					'ui-dialog': 'ui-corner-all ' + dialogClass,
+				},
+				position: null,
+				open: function (event, ui) {
+					var that, inlineStyle;
+					that = this;
+					inlineStyle = {};
+					scrollTop = $(window).scrollTop();
+					if (containerId !== 'body') {
+						inlineStyle.height = $(containerId).outerHeight();
+						inlineStyle.top = $(containerId).find('.os-viewport').length !== 0 ? $(containerId).find('.os-viewport').scrollTop() : $(containerId).scrollTop();
+					} else {
+						inlineStyle.top = 0;
+					}
+
+					// 20201224 수정 | popup 처음 열릴 때만 top 지정
+					if ( $(".ui-dialog-container:visible").length === 0 ) {
+						$(containerId).css({
+							'top': scrollTop * -1,
+						});
+					}
+
+					// body scroll 비활성화
+					$(containerId).addClass('dialog-open');
+
+					// 팝업 2개 이상 노출 시 z-index 지정
+					var zNum = 99;
+					if ( $(".ui-dialog-container:visible").length > 0 ){
+						$(".ui-dialog-container:visible").each(function (){
+							zNum = Math.max(zNum, $(this).css('z-index'));
+						});
+					}
+					$(that).closest('.ui-dialog-container').addClass('open').css('z-index', zNum+2);
+
+					// 팝업 close
+					if ($('[data-layer-close]', that).length > 0) {
+						$('[data-layer-close]', that).off('click').on('click', function () {
+							$(that).dialog('close');
+						});
+					}
+
+					// full popup
+					if (dialogClass.indexOf('dialog-full') === 0){
+						$(that).find('.dialog-contents').scrollTop(0);
+
+						if (!$(that).parent().hasClass('dialog-mymenu')) setBtnGoTop($(that));
+
+						// 20210202 add | full popup title 개행시 더보기 버튼 추가
+						function isEllipsisActive(e) {
+							return (e.offsetWidth < e.scrollWidth);
+						}
+
+						var popTitle = $(that).find('.dialog-header .pop-title');
+
+						if(isEllipsisActive(popTitle[0]) && !popTitle.parent().hasClass('is-ellipsis')) {
+							popTitle.parent().addClass('is-ellipsis');
+							popTitle.after('<button type="button" class="btn-title-more js-btn-title-more"></button>');
+						}
+
+						popTitle.parent().find('.js-btn-title-more').off().on('click', function(){
+							popTitle.parent().toggleClass('is-more');
+							var titleHeight = popTitle.parent().outerHeight(true);
+							$(that).find('.dialog-contents').css('height', 'calc(100% - '+titleHeight+'px)');
+
+							// 타이틀 더보기 버튼 클릭 시, 탑버튼 위치 재계산
+							if(!$(that).find('.js-btn-go-top').hasClass('is-fixed')) moreBtnclickBool = 1;
+							setFooterPos($(that));
+						});
+					}
+				},
+
+				close: function (event, ui) {
+					var that = this;
+
+					$(that).closest('.ui-dialog-container').removeClass('open').removeAttr('style');
+
+					if ($(containerId).find('.ui-dialog-container.open').length === 0) {
+						scrollTopPos = $('body').css('top');
+						$('body').removeAttr('style');
+						$(containerId).removeClass('dialog-open');
+						$(window).scrollTop(parseInt(scrollTopPos) * -1);
+					}
+				},
+			});
+
+		});
+	}
+
+	if ($(btnSelector).length > 0) {
+		$(btnSelector).each(function () {
+			$(this).off('click').on('click', function (event) {
+				event.preventDefault();
+
+				$($(this).data('target')).dialog('open');
+			});
+		});
+	}
 }

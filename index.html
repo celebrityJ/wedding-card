@@ -44,6 +44,7 @@
 	<!-- Vendors javascript
 			================================================== -->
 	<script src="vendors/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+	<script src="vendors/jquery-ui.1.12.1/jquery-ui.min.js"></script>
 	<script src="vendors/swiper-4.4.6/js/swiper.min.js"></script>
 	<script src="vendors/aos/js/aos.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd7dda184e2ff419e9132ccd591444dd"></script>
@@ -126,7 +127,17 @@
 					<p class="sub-title animation fade-up">신랑 신부에게 축하의 마음을 전해주세요.</p>
 
 					<div class="btn-wrap animation fade-up">
-						<button type="button" class="btn">신랑측 마음전할 곳</button>
+						<button type="button" class="btn btn-dialog" data-target="#dialogDefault">신랑측 마음전할 곳</button>
+						<div id="dialogDefault" class="ui-dialog-contents" title="기본 팝업">
+							<div class="dialog-contents-inner">
+								<div style="font-size: 11px;">기본 사이즈 팝업</div>
+								<div style="height: 1000px; background: linear-gradient(to left top, blue, red);"></div>
+							</div>
+							<div class="btn-wrap">
+								<button type="button" class="btn">확인</button>
+							</div>
+						</div>
+
 						<button type="button" class="btn">신부측 마음전할 곳</button>
 					</div>
 				</div>

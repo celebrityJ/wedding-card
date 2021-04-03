@@ -1,6 +1,102 @@
 /* media query */
 @import url("reset.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Noto+Sans+KR:300,400,500,700&subset=korean");
+.dialog-open {
+	position: fixed;
+	overflow: hidden !important;
+	height: 100%;
+	touch-action: none;
+}
+
+.dialog-open .os-viewport {
+	overflow: hidden !important;
+}
+
+.dialog-header, .dialog-contents, .dialog-bottom {
+	display: none;
+}
+
+.ui-dialog-container {
+	display: none;
+}
+
+.ui-dialog-container.open {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	-webkit-overflow-scrolling: initial;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+	align-items: center;
+	height: 100%;
+	touch-action: none;
+}
+
+.ui-dialog-container.open .dialog-header, .ui-dialog-container.open .dialog-contents, .ui-dialog-container.open .dialog-bottom {
+	display: block;
+}
+
+.ui-dialog {
+	position: relative;
+	z-index: 2;
+	max-width: 100%;
+	background: #fff;
+	max-height: 100%;
+	padding: 0;
+	width: 400px !important;
+	margin: 0 auto;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	display: none;
+}
+
+.ui-dialog .ui-dialog-contents {
+	position: relative;
+	padding: 9px 0 0;
+	overflow: visible;
+	background-color: #fff;
+	touch-action: none;
+	padding-top: 40px;
+	word-break: keep-all;
+	word-wrap: break-word;
+}
+
+.ui-dialog .ui-dialog-contents .dialog-contents {
+	padding: 0 40px 39px;
+	overflow-y: auto;
+	max-height: 372px;
+	-webkit-overflow-scrolling: touch;
+	text-align: center;
+}
+
+.ui-dialog:not(.dialog-full) .ui-dialog-contents .dialog-bottom .btn-wrap [class*=btn] + [class*=btn] {
+	margin-left: 0;
+}
+
+.ui-dialog:not(.dialog-full) .ui-dialog-contents .dialog-bottom .btn-wrap .btn-line {
+	border-left-color: #fff;
+	border-right-color: #fff;
+	border-bottom-color: #fff;
+}
+
+.ui-widget-overlay {
+	background: rgba(0, 0, 0, 0.6);
+}
+
 /**********************************************************************************
 ** common
 ***********************************************************************************/

@@ -1,0 +1,99 @@
+// s : jQueryUI Dialog
+.dialog-open {
+	position: fixed;
+	overflow: hidden !important;
+	height: 100%;
+	touch-action: none;
+
+	.os-viewport {
+		overflow: hidden !important;
+	}
+}
+
+.dialog-header, .dialog-contents, .dialog-bottom{
+	display: none;
+}
+
+.ui-dialog-container{
+	display: none;
+
+	&.open{
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		-webkit-overflow-scrolling: initial;
+		@include justify_width(start);
+		align-items: center;
+		height: 100%;
+		touch-action: none;
+
+		.dialog-header, .dialog-contents, .dialog-bottom{
+			display: block;
+		}
+	}
+}
+
+.ui-dialog {
+	position: relative;
+	z-index: 2;
+	max-width: 100%;
+	background: #fff;
+	max-height: 100%;
+	padding: 0;
+	width: 400px !important;
+	margin: 0 auto;
+
+	.ui-dialog-titlebar {
+		display: none;
+	}
+
+	.ui-dialog-contents {
+		position: relative;
+		padding: 9px 0 0;
+		overflow: visible;
+		background-color: #fff;
+		touch-action: none;
+		padding-top: 40px;
+		word-break: keep-all;
+		word-wrap: break-word;
+
+		.dialog-contents{
+			padding: 0 40px 39px;
+			overflow-y: auto;
+			max-height: 372px;
+			-webkit-overflow-scrolling: touch;
+			text-align: center;
+
+		}
+	}
+
+	&:not(.dialog-full){
+		.ui-dialog-contents {
+			.dialog-bottom {
+				.btn-wrap {
+					[class*=btn]{
+						& + [class*=btn]{
+							margin-left: 0;
+						}
+					}
+
+					.btn-line {
+						border: {
+							left-color: #fff;
+							right-color: #fff;
+							bottom-color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ui-widget-overlay{
+	background: rgba(0, 0, 0, .6);
+}
+// e : jQueryUI Dialog
