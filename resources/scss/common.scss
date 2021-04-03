@@ -674,125 +674,6 @@ h3.title, h4.title{
 		}
 	}
 
-	.service-link-wrap{
-		overflow: hidden;
-		background-color: #11308f;
-		animation: fadeIn .6s ease-in-out forwards;
-		height: 50px;
-
-		.header-inner{
-			justify-content: space-between;
-		}
-
-		.desc{
-			flex: 1;
-			@include calc_letter_spacing(-15, 1.4rem);
-			color: $textColorWhite;
-			opacity: 0;
-			animation: fadeInUp .4s ease-in-out .6s forwards;
-
-		}
-
-		.link-list{
-			position: relative;
-			flex: 2;
-			font-size: 0;
-			height: 100%;
-
-			li{
-				position: relative;
-				display: inline-block;
-				width: 50%;
-				height: 100%;
-				vertical-align: top;
-				background-color: $pointColorBlue;
-
-				a{
-					position: relative;
-					display: block;
-					width: 100%;
-					height: 100%;
-					color: rgba(255, 255, 255, .7);
-					font-weight: 600;
-					opacity: 0;
-					animation: fadeInUp .4s ease-in-out .75s forwards;
-
-					@include desktop{
-						padding: 28px 40px 0;
-						@include calc_letter_spacing(-15, 1.4rem);
-					}
-
-					@include mobile{
-						padding: 20px 19px 0;
-						font-size: 1.1rem;
-					}
-
-					&:after{
-						content: '';
-						position: absolute;
-						top: 50%;
-						display: block;
-						transform: translateY(-50%);
-						transition: transform .23s;
-
-						@include desktop{
-							height: 12px;
-							right: 41px;
-							width: 13px;
-							//background: url(../images/pc/ui/ui_arr_service_link.png) 0 0 no-repeat;
-						}
-
-						@include mobile{
-							width: 9px;
-							height: 8px;
-							right: 20px;
-							//background: url(../images/mo/ui/ui_arr_service_link.png) 0 0 / 100% no-repeat;
-						}
-					}
-
-					&:hover{
-						&:after{
-							transition: transform .23s;
-							transform: translate(10px, -50%);
-						}
-					}
-				}
-
-				&:before{
-					content: '';
-					position: absolute;
-					top: 0;
-					left: 0;
-					bottom: 0;
-					border-left: 1px solid $textColorWhite;
-					opacity: .2;
-					z-index: 2;
-				}
-
-				@include mobile{
-					&:first-child{
-						&:before{
-							content: none;
-						}
-					}
-				}
-			}
-
-			@include desktop{
-				&:before{
-					content: '';
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					border-left: 1px solid $textColorWhite;
-					opacity: .2;
-					z-index: 2;
-				}
-			}
-		}
-	}
-
 	&.is-complete{
 		.gnb-wrap{
 			.inner{
@@ -806,7 +687,7 @@ h3.title, h4.title{
 
 		.main-banner-wrap{
 			&:after{
-				background: url(../images/main.jpg) top center / cover no-repeat;
+				background: url(../images/main.jpg) center / cover no-repeat;
 			}
 
 			&:before{
@@ -839,7 +720,7 @@ h3.title, h4.title{
 .contents-container{
 	overflow: hidden;
 	position: relative;
-	padding-top: 50px;
+	padding-top: 80px;
 
 	.contents-inner{
 		width: 100%;
@@ -850,921 +731,135 @@ h3.title, h4.title{
 
 	.introduce-wrap{
 		outline: none;
-		margin-bottom: 129px;
+		overflow: hidden;
+		margin-bottom: 80px;
 
-		.expertise-box{
-			margin-bottom: 87px;
+		.title{
+			padding: 0 20px;
+			margin-bottom: 24px;
+		}
 
-			.expertise-header{
-				overflow: hidden;
-				margin-bottom: 58px;
-
-				.title{
-					padding: 0 20px;
-					margin-bottom: 24px;
-				}
-
-				.img-box{
-
-					img{
-						display: block;
-						width: 100%;
-					}
-				}
-
-				.desc-box{
-					margin: 30px 0 15px 0;
-					text-align: center;
-
-					.sub-title{
-						display: block;
-						color: #222;
-						margin-bottom: 9px;
-						font-size: 1.5rem;
-						line-height: 2rem;
-
-						.spot{
-							color: $pointColorBlue;
-							font-size: 1.7rem;
-							font-weight: 700;
-						}
-					}
-
-					.desc{
-						margin-top: 15px;
-						color: #222;
-						font-size: 1.4rem;
-						line-height: 1.9rem;
-					}
-				}
-			}
-
-			.expertise-content{
-				.item{
-					overflow: hidden;
-					position: relative;
-
-					@include desktop{
-						padding-bottom: 100px;
-
-						.img-box{
-							position: relative;
-							display: block;
-							width: 600px;
-
-							img{
-								width: 100%;
-							}
-
-							&:after{
-								content: '';
-								position: absolute;
-								right: -100px;
-								bottom: -100px;
-								display: block;
-								width: 100px;
-								height: 100px;
-								//background: $pointColorBlue url(../images/pc/common/ico_behind.png) 0 0 no-repeat;
-								margin-left: 600px;
-								opacity: 0;
-							}
-
-							&.aos-animate{
-								&:after{
-									opacity: 1;
-									transition: opacity .23s $transDefaultEase .55s;
-								}
-
-								+ .txt-box{
-									.title, .desc{
-										animation: {
-											name: fadeInRight;
-											duration: .5s;
-											delay: .2s;
-											timing-function: $transDefaultEase;
-											fill-mode: forwards;
-										};
-									}
-
-									.desc{
-										animation-delay: .4s;
-									}
-								}
-							}
-						}
-
-					}
-
-					@include mobile{
-						margin: 0 -20px;
-					}
-
-					.txt-box{
-						@include desktop {
-							position: absolute;
-							top: 0;
-							left: 0;
-						}
-
-						@include mobile{
-							max-width: 300px;
-
-							.img-box{
-								position: relative;
-								margin-top: 18px;
-								width: 100%;
-
-								img {
-									width: 100%;
-								}
-
-								&:after{
-									@include mobile {
-										position: absolute;
-										right: -75px;
-										bottom: 0;
-										content: '';
-										display: block;
-										width: 75px;
-										height: 75px;
-										background: {
-											color: $pointColorBlue;
-											//image: url(../images/mo/common/ico_behind.png);
-											size: 225px 75px;
-											repeat: no-repeat;
-										}
-										opacity: 0;
-									}
-								}
-
-								&.aos-animate{
-									&:after{
-										opacity: 1;
-										transition: opacity .23s $transDefaultEase .5s;
-									}
-								}
-							}
-						}
-
-						@media only screen and (max-width: 375px) {
-							width: calc(100% - 75px)
-						}
-
-						.title {
-							@include desktop {
-								opacity: 0;
-								margin: {
-									top: 53px;
-									left: -24px;
-								}
-							}
-
-							@include mobile{
-								position: relative;
-								z-index: 2;
-							}
-						}
-
-						.desc {
-							@include desktop {
-								opacity: 0;
-								margin: {
-									top: 38px;
-									left: 48px;
-								}
-								@include calc_letter_spacing(-50, 1.4rem);
-								line-height: 2.2rem;
-								transition: none;
-							}
-
-							@include mobile{
-								margin-top: 27px;
-								font-size: 1.2rem;
-								line-height: 1.8rem;
-							}
-						}
-					}
-
-					&.plan, &.tech{
-						.txt-box {
-							@include desktop {
-								left: 600px;
-							}
-
-							@media only screen and (max-width: 960px) and (min-width: $breakpointMobile + 1px) {
-								left: auto;
-								right: 0;
-							}
-
-							.title{
-								@include mobile{
-									padding-left: 20px;
-								}
-							}
-
-							.desc{
-								@include mobile{
-									padding-left: 20px;
-								}
-							}
-						}
-					}
-
-					&.plan {
-						@include desktop {
-							.img-box{
-								&:after {
-									background-position: 0 0;
-								}
-							}
-						}
-
-						.txt-box{
-							.img-box{
-								@include mobile{
-									&:after{
-										background-position: 0 0;
-									}
-								}
-							}
-						}
-					}
-
-					&.design{
-						@include desktop {
-							.img-box{
-								margin-left: auto;
-
-								&:after {
-									right: 100%;
-									background-position: -100px 0;
-								}
-
-								&.aos-animate{
-									+ .txt-box{
-										.title, .desc{
-											animation-name: fadeInLeft;
-										}
-									}
-								}
-							}
-
-						}
-
-						@include mobile{
-							margin: 0 -20px;
-						}
-
-						.txt-box{
-							@include desktop {
-								width: calc(100% - 600px);
-								min-width: 200px;
-								height: 100%;
-								@include justify_width(false, start);
-								flex-direction: column;
-								align-items: flex-end;
-								text-align: right;
-							}
-
-							@include mobile{
-								margin-left: auto;
-							}
-
-							@media only screen and (max-width: 375px) {
-								width: calc(100% - 75px);
-							}
-
-							.img-box{
-								@include mobile{
-									&:after{
-										background-position: -75px 0;
-										left: -75px;
-										right: auto;
-									}
-								}
-							}
-
-							.title{
-								@include desktop {
-									margin: {
-										left: 0;
-										right: -20px;
-									}
-								}
-							}
-
-							.desc{
-								@include desktop {
-									margin: {
-										left: 0;
-										right: 50px;
-									}
-								}
-
-								@include mobile{
-									padding-right: 20px;
-									text-align: right;
-								}
-							}
-						}
-					}
-
-					&.tech{
-						@include desktop {
-							&:after{
-								background-position: -200px 0;
-							}
-						}
-
-						.txt-box{
-							.img-box{
-								@include mobile{
-									&:after{
-										background-position: -150px 0;
-									}
-								}
-							}
-						}
-
-					}
-
-					~ .item{
-						@include desktop {
-							margin-top: 161px;
-						}
-						@include mobile {
-							margin-top: 58px;
-
-							.txt-box {
-								.title{
-									transition-delay: .2s;
-								}
-							}
-						}
-					}
-				}
+		.img-box{
+			img{
+				display: block;
+				width: 100%;
 			}
 		}
 
-		.need-us-box{
-			position: relative;
+		.desc-box{
+			text-align: center;
 
-			.title{
-				color: $textColorWhite;
+			.sub-title{
+				display: block;
+				color: #222;
+				margin-bottom: 9px;
+				font-size: 1.5rem;
+				line-height: 2rem;
 
 				.spot{
-					color: #7eece4;
+					color: $pointColorBlue;
+					font-size: 1.7rem;
+					font-weight: 700;
 				}
 			}
 
-			.need-us-content{
-				transition-duration: .7s;
-				@include desktop{
-					height: 745px;
-					padding-top: 126px;
-					//background: #3c3f45 url(../images/pc/common/bg_needus1.jpg) top right / cover no-repeat;
-				}
+			.desc{
+				margin-top: 15px;
+				color: #222;
+				font-size: 1.4rem;
+				line-height: 1.9rem;
+			}
+		}
 
-				@include mobile{
-					padding:{
-						top: 62px;
-						bottom: 50px;
-					}
-					min-height: 678px;
-					//background: #3c3f45 url(../images/mo/common/bg_needus1.jpg) top right / cover no-repeat;
-				}
+		.line-box{
+			margin-top: 50px;
+			text-align: center;
 
-				.contents-inner {
-
-					> .title{
-						transition-delay: .1s;
-					}
-
-					.content-list{
-						font-size: 0;
-
-						@include desktop{
-							@include justify_width(false, start);
-							margin-top: 71px;
-						}
-
-						@include mobile{
-							margin-top: 45px;
-						}
-
-						@include tablet{
-							margin: {
-								left: -10px;
-								right: -10px;
-							}
-						}
-
-						.item{
-							@include desktop{
-								flex: 0 1 33.3333%;
-							}
-
-							@include tablet{
-								padding:{
-									left: 10px;
-									right: 10px;
-								};
-							}
-
-							.num{
-								display: block;
-								font-weight: 600;
-								color: #7eece4;
-
-								@include desktop{
-									margin-bottom: 13px;
-									@include calc_letter_spacing(-50, 1.8rem);
-								}
-
-								@include mobile{
-									margin-bottom: 12px;
-									@include calc_letter_spacing(-25, 1.6rem);
-								}
-							}
-
-							.title{
-								color: $textColorWhite;
-
-								@include desktop{
-									@include calc_letter_spacing(-50, 2rem);
-									line-height: 2.6rem;
-								}
-
-								@include mobile{
-									font-size: 1.7rem;
-								}
-							}
-
-							.desc{
-								color: $textColorWhite;
-								opacity: .6;
-
-								@include desktop{
-									margin-top: 33px;
-									font-size: 1.4rem;
-									line-height: 2.2rem;
-								}
-
-								@include mobile{
-									margin-top: 16px;
-									font-size: 1.2rem;
-									line-height: 1.8rem;
-								}
-							}
-
-							&.aos-animate{
-								@include desktop{
-									&:nth-child(1){
-										transition-delay: .2s;
-									}
-
-									&:nth-child(2){
-										transition-delay: .3s;
-									}
-
-									&:nth-child(3){
-										transition-delay: .4s;
-									}
-								}
-							}
-
-							~ .item{
-								@include mobile{
-									margin-top: 41px;
-								}
-							}
-						}
-					}
-				}
-
+			.box-inner{
+				display: inline-block;
+				padding: 15px 10px;
+				border-top: 1px solid $pointColorBlue;
+				border-bottom: 1px solid $pointColorBlue;
 			}
 
-			.link-box{
-				position: relative;
-				width: 100%;
+			.item{
+				font-size: 1.5rem;
+				line-height: 2rem;
 
-				@include desktop{
-					max-width: $contentsWidth;
-					height: 290px;
-					margin: -129px auto 0;
-					//background: url(../images/pc/common/bg_needus2.jpg) center/ cover no-repeat;
-
-					&.aos-animate{
-						transition-delay: .2s;
-					}
+				span{
+					font-size: 1.3rem;
 				}
 
-				@include mobile{
-					height: 200px;
-					//background: url(../images/mo/common/bg_needus2.jpg) center/ cover no-repeat;
-				}
-
-				.btn-visit{
-					position: absolute;
-					display: block;
-					background-color: $pointColorBlue;
-					color: $textColorWhite;
-					box-shadow: 0 5px 20px rgba(13, 49, 157, 0.1);
-					-webkit-box-shadow: 0 5px 20px rgba(13, 49, 157, 0.1);
-					-moz-box-shadow: 0 5px 20px rgba(13, 49, 157, 0.1);
-
-
-					@include desktop{
-						right: 20%;
-						bottom: -76px;
-						width: 160px;
-						height: 160px;
-						padding: 27px 0 0 24px;
-						@include calc_letter_spacing(-50, 1.5rem);
-						line-height: 2.2rem;
-						border: 0;
-						box-sizing: border-box;
-
-						&.aos-animate{
-							transition-delay: .1s;
-						}
-					}
-
-					@include mobile{
-						right: 65px;
-						bottom: -45px;
-						width: 90px;
-						height: 90px;
-						padding: 15px 0 0 12px;
-						font-size: 1.2rem;
-						line-height: 1.8rem;
-					}
-
-					&:after{
-						content: '';
-						display: block;
-						transition: all .35s;
-
-						@include desktop{
-							width: 14px;
-							height: 5px;
-							margin-top: 16px;
-							//background: url(../images/pc/ui/ui_btn_arr.png) 0 0 / 100% no-repeat;
-						}
-
-						@include mobile{
-							width: 15px;
-							height: 6px;
-							margin-top: 7px;
-							//background: url(../images/mo/ui/ui_btn_arr.png) 0 0 / 100% no-repeat;
-						}
-					}
-
-					&:hover{
-						&:after{
-							transition: all .23s;
-							transform: translateX(10px);
-						}
-					}
-
+				+ .item{
+					margin-top: 10px;
 				}
 			}
 		}
 	}
 
-	.prod-wrap{
+	.gallery-wrap{
 		outline: none;
-
-		@include desktop{
-			margin-bottom: 200px;
-		}
-
-		@include mobile{
-			margin-bottom: 90px;
-		}
+		margin-bottom: 50px;
 
 		.title{
-			@include desktop{
-				margin-bottom: 73px;
-			}
-
-			@include mobile{
-				margin-bottom: 30px;
-			}
+			margin-bottom: 30px;
 		}
 
-		.prod-list-wrap{
+		.gallery-list-wrap{
 			position: relative;
 
 			&.aos-animate{
 				transition-delay: .1s;
 			}
 
-			@include mobile{
-				margin: 0 -20px;
-			}
+			.gallery-swiper-wrap{
+				.gallery-list-box{
+					.gallery-box{
+						display: flex;
+						height: auto;
+						align-items: center;
+						background-color: #f5f5f5;
 
-			@include tablet{
-				margin: 0 -20px;
-			}
-
-			.prod-swiper-wrap{
-				.prod-list-box{
-					.prod-box{}
-				}
-
-				@include desktop {
-					&.swiper-container-horizontal {
-						+ .btn-swiper-arrow-wrap {
-							//display: block;
+						img{
+							display: block;
+							width: 100%;
 						}
 					}
 				}
-
-				@include mobile {
-					padding-left: 20px;
-				}
-
-				@include tablet {
-					padding-left: 20px;
-				}
 			}
 
-			.btn-swiper-arrow-wrap{
-				display: none;
+			.gallery-thumb-wrap{
+				margin-top: 20px;
+				padding: 0 20px;
 
-				.btn-swiper-arrow{
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-					width: 42px;
-					height: 78px;
-					background:{
-						image: url(../images/pc/ui/ui_btn_swiper.png);
-						repeat: no-repeat;
-					}
-					opacity: .8;
+				.gallery-thumb-box{
+					.thumb-box{
+						display: flex;
+						height: auto;
+						align-items: center;
 
-					&.prev{
-						left: -120px;
-						background-position: 0 0;
+						img{
+							display: block;
+							width: 100%;
+						}
 					}
 
-					&.next{
-						right: -120px;
-						background-position: -42px 0;
-					}
-
-					&.swiper-button-disabled{
-						cursor: default;
-						opacity: .2;
-					}
-				}
-			}
-		}
-	}
-
-	.support-wrap{
-		background-color: #f5f5f5;
-		outline: none;
-
-		@include desktop{
-			padding-bottom: 220px;
-
-		}
-
-		.contents-inner{
-			@include desktop {
-				padding-top: 129px;
-			}
-
-			@include mobile{
-				padding-top: 57px;
-			}
-		}
-
-		.title{
-			@include desktop{
-				margin-bottom: 72px;
-			}
-
-			@include mobile{
-				margin-bottom: 32px;
-			}
-		}
-
-		.support-content{
-			@include desktop{
-				@include justify_width(false, start);
-			}
-
-			@include mobile{
-				margin: 0 -20px;
-			}
-
-			.mail-info{
-				position: relative;
-
-				@include desktop{
-					flex: 2;
-					height: 800px;
-					background: url(../images/pc/common/bg_support1.jpg) center / cover no-repeat;
-				}
-
-				@include mobile{
-					height: 330px;
-					background: url(../images/mo/common/bg_support1.jpg) center / cover no-repeat;
-				}
-
-				.info-txt-box{
-					position: absolute;
-					right: 0;
-					bottom: 0;
-					@include justify_width(false, start);
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					background-color: $textColorWhite;
-
-					@include desktop{
-						width: 400px;
-						height: 400px;
-					}
-
-					@include mobile{
-						width: 160px;
-						height: 160px;
-					}
-
-					.info-txt{
+					.swiper-slide-thumb-active{
 						position: relative;
-						font-weight: 700;
-						color: #00b6b8;
-						text-align: center;
-						word-break: break-all;
-						transition: all $transDefaultTime;
-
-						@include desktop{
-							@include calc_letter_spacing(-25, 2rem);
-						}
-
-						@include mobile{
-							font-size: 1.3rem;
-							line-height: 1.7rem;
-						}
 
 						&:before{
 							content: '';
 							position: absolute;
-							bottom: -3px;
+							top: 0;
 							left: 0;
-							display: block;
-							width: 0;
-							height: 1px;
-							background-color: #00b6b8;
-							transition: all $transDefaultTime $transDefaultEase;
-						}
-
-						&:hover{
-							color: $pointColorBlue;
-
-							&:before{
-								width: 100%;
-								background-color: $pointColorBlue;
-							}
-						}
-					}
-
-					.info-desc{
-						color: #333;
-						text-align: center;
-
-						@include desktop{
-							margin-top: 41px;
-							@include calc_letter_spacing(-50, 1.4rem);
-							line-height: 2.2rem;
-						}
-
-						@include mobile{
-							margin-top: 20px;
-							@include calc_letter_spacing(-50, 1.1rem);
-							line-height: 1.7rem;
-						}
-
-						a{
-							position: relative;
-							display: block;
-							transition: all $transDefaultTime $transDefaultEase;
-
-							&:before{
-								content: '';
-								position: absolute;
-								bottom: 0;
-								left: 0;
-								display: block;
-								width: 0;
-								height: 1px;
-								background-color: #333;
-								transition: all $transDefaultTime $transDefaultEase;
-							}
-
-							&:hover{
-								color: $pointColorBlue;
-
-								&:before{
-									width: 100%;
-									background-color: $pointColorBlue;
-								}
-							}
-						}
-
-						&:before{
-							content: '';
-							display: block;
-							background-color: #4c4c4c;
-
-							@include desktop{
-								margin: 0 auto 32px;
-								width: 25px;
-								height: 1px;
-							}
-
-							@include mobile{
-								margin: 0 auto 12px;
-								width: 13px;
-								height: 1px;
-							}
-						}
-					}
-				}
-
-			}
-
-			.support-guide{
-				@include desktop{
-					flex: 1;
-					height: 800px;
-					background: url(../images/pc/common/bg_support2.jpg) right bottom / cover no-repeat;
-					transition-delay: .1s;
-				}
-
-				@include mobile{
-					height: 250px;
-					background: url(../images/mo/common/bg_support2.jpg) center / cover no-repeat;
-				}
-
-				.guide-txt-box{
-					@include desktop{
-						padding: {
-							top: 84px;
-							left: 61px;
-							right: 50px;
-						};
-					}
-
-					@include mobile{
-						padding: {
-							top: 38px;
-							left: 20px;
-							right: 90px;
-						};
-					}
-
-					.guide-txt{
-						color: $textColorWhite;
-
-						@include desktop{
-							@include calc_letter_spacing(-25, 3rem);
-							line-height: 4rem;
-						}
-
-						@include mobile{
-							padding-right: 105px;
-							font-size: 1.9rem;
-							line-height: 2.5rem;
-						}
-					}
-
-					.guide-desc{
-						color: $textColorWhite;
-						opacity: .4;
-
-						@include desktop{
-							margin-top: 29px;
-							@include calc_letter_spacing(-50, 1.4rem);
-							line-height: 2.2rem;
-						}
-
-						@include mobile{
-							margin-top: 19px;
-							font-size: 1.2rem;
-							line-height: 2rem;
+							width: 100%;
+							height: 100%;
+							border: 1px solid #000;
 						}
 					}
 				}
 			}
 		}
-
 	}
 }
 

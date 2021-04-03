@@ -14,7 +14,7 @@ $(function () {
 	moGnbOnOFF();
 	// $('.js-scrollspy').scrollSpy({ elName:'' });
 
-	// prodSwiperInit();
+	gallerySwiperInit();
 
 	$('.js-animation').each(function(){
 		$(this).on('animationend webkitAnimationEnd', function() {
@@ -39,51 +39,32 @@ $(window).scroll(function () {
 });
 
 /**********************************************************************************
- ** prodSwiperInit
+ ** gallerySwiperInit
  ***********************************************************************************/
 /*
 * date : 20200909
 * last : 20200921
-* name : prodSwiperInit(  )
+* name : gallerySwiperInit(  )
 * pram :
 * desc : product swiper init
 */
-var prodSwiper;
-function prodSwiperInit(){
-	if(!!$('.prod-list-wrap .prod-swiper-wrap')){
-		var breakPoint;
-		breakPoint = window.matchMedia('(max-width: 1240px)');
+function gallerySwiperInit(){
+	var galleryThumbs = new Swiper('.gallery-list-wrap .gallery-thumb-wrap', {
+		spaceBetween: 10,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
 
-		if( prodSwiper !== undefined){
-			prodSwiper.destroy(true, true);
+	var gallerySwiper = new Swiper('.gallery-list-wrap .gallery-swiper-wrap', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 600,
+		thumbs: {
+			swiper: galleryThumbs,
 		}
-
-		function createSwiper(){
-			if ( breakPoint.matches === true ) {
-				prodSwiper = new Swiper('.prod-list-wrap .prod-swiper-wrap', {
-					slidesPerView: 'auto',
-					spaceBetween: 0,
-					speed: 600,
-					navigation: {
-						prevEl: '.prod-list-wrap .btn-swiper-arrow.prev',
-						nextEl: '.prod-list-wrap .btn-swiper-arrow.next',
-					},
-				});
-			}
-		}
-
-		// breakPoint.addEventListener('change', breakPointChecker);
-		breakPoint.addListener(breakPointChecker);
-		function breakPointChecker(event) {
-			if ( prodSwiper !== undefined ) {
-				prodSwiper.destroy(true, true);
-				prodSwiper = undefined;
-			}
-			createSwiper();
-		}
-
-		createSwiper();
-	}
+	});
 }
 
 /**********************************************************************************
