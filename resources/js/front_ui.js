@@ -7,10 +7,6 @@
 */
 
 $(document).ready(function (event) {
-	setAosAnimation();
-	setUIDialog(' [data-popup-trigger]', ' .ui-dialog-contents');;
-	gallerySwiperInit();
-
 	$('.js-animation').each(function(){
 		$(this).on('animationend webkitAnimationEnd', function() {
 			$('.js-animation').addClass('is-complete');
@@ -20,14 +16,11 @@ $(document).ready(function (event) {
 	var wh = $(window).height();
 	$('.main-banner-wrap').height(wh);
 
-	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-	var options = { //지도를 생성할 때 필요한 기본 옵션
-		center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-		level: 3 //지도의 레벨(확대, 축소 정도)
-	};
-
-	var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-
+	setAosAnimation();
+	setUIDialog(' [data-popup-trigger]', ' .ui-dialog-contents');;
+	gallerySwiperInit();
+	clipboard();
+	mapApi();
 });
 
 $(window).on('resize', function () {
@@ -42,6 +35,46 @@ $(window).scroll(function () {
 	_scrollTop = scrollTop;
 	scrollTop = $(window).scrollTop();
 });
+
+/**********************************************************************************
+ ** mapApi
+ ***********************************************************************************/
+/*
+* date : 20200909
+* last : 20200921
+* name : mapApi(  )
+* pram :
+* desc : mapApi
+*/
+function mapApi(){
+	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+	var options = { //지도를 생성할 때 필요한 기본 옵션
+		center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+		level: 3 //지도의 레벨(확대, 축소 정도)
+	};
+
+	var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+}
+
+/**********************************************************************************
+ ** clipboard
+ ***********************************************************************************/
+/*
+* date : 20200909
+* last : 20200921
+* name : clipboard(  )
+* pram :
+* desc : clipboard
+*/
+function clipboard(){
+	var clipboard = new Clipboard('.btn-copy');
+	clipboard.on('success', function(e) {
+		console.log(e);
+	});
+	clipboard.on('error', function(e) {
+		console.log(e);
+	});
+}
 
 /**********************************************************************************
  ** gallerySwiperInit
@@ -221,35 +254,6 @@ function setUIDialog(btnSelector, selector) {
 					if ($('[data-layer-close]', that).length > 0) {
 						$('[data-layer-close]', that).off('click').on('click', function () {
 							$(that).dialog('close');
-						});
-					}
-
-					// full popup
-					if (dialogClass.indexOf('dialog-full') === 0){
-						$(that).find('.dialog-contents').scrollTop(0);
-
-						if (!$(that).parent().hasClass('dialog-mymenu')) setBtnGoTop($(that));
-
-						// 20210202 add | full popup title 개행시 더보기 버튼 추가
-						function isEllipsisActive(e) {
-							return (e.offsetWidth < e.scrollWidth);
-						}
-
-						var popTitle = $(that).find('.dialog-header .pop-title');
-
-						if(isEllipsisActive(popTitle[0]) && !popTitle.parent().hasClass('is-ellipsis')) {
-							popTitle.parent().addClass('is-ellipsis');
-							popTitle.after('<button type="button" class="btn-title-more js-btn-title-more"></button>');
-						}
-
-						popTitle.parent().find('.js-btn-title-more').off().on('click', function(){
-							popTitle.parent().toggleClass('is-more');
-							var titleHeight = popTitle.parent().outerHeight(true);
-							$(that).find('.dialog-contents').css('height', 'calc(100% - '+titleHeight+'px)');
-
-							// 타이틀 더보기 버튼 클릭 시, 탑버튼 위치 재계산
-							if(!$(that).find('.js-btn-go-top').hasClass('is-fixed')) moreBtnclickBool = 1;
-							setFooterPos($(that));
 						});
 					}
 				},

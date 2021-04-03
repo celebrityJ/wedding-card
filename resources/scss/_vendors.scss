@@ -43,8 +43,9 @@
 	background: #fff;
 	max-height: 100%;
 	padding: 0;
-	width: 400px !important;
+	width: 320px !important;
 	margin: 0 auto;
+	border-radius: 10px;
 
 	.ui-dialog-titlebar {
 		display: none;
@@ -59,14 +60,40 @@
 		padding-top: 40px;
 		word-break: keep-all;
 		word-wrap: break-word;
+		border-radius: 10px;
 
 		.dialog-contents{
-			padding: 0 40px 39px;
+			padding: 0 40px 30px;
 			overflow-y: auto;
 			max-height: 372px;
 			-webkit-overflow-scrolling: touch;
 			text-align: center;
 
+		}
+
+		.btn-wrap{
+			margin-top: 30px;
+			.btn-copy{
+				width: 100%;
+				height: 40px;
+				background-color: #311c00;
+				border-radius: 30px;
+				line-height: 40px;
+				color: #fff;
+				font-weight: 600;
+				font-size: 14px;
+				text-align: center;
+			}
+		}
+
+		.btn-pop-close{
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			display: block;
+			width: 30px;
+			height: 30px;
+			background: url(../images/dialog_icon_btn_close.png) center / 17px no-repeat;
 		}
 	}
 
@@ -95,5 +122,10 @@
 
 .ui-widget-overlay{
 	background: rgba(0, 0, 0, .6);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 // e : jQueryUI Dialog
