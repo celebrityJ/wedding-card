@@ -44,9 +44,10 @@ html, body {
 
 h3.title, h4.title {
 	overflow: hidden;
-	font-weight: 200;
-	font-size: 2.8rem;
-	line-height: 3.2rem;
+	font-weight: 500;
+	font-size: 2.2rem;
+	line-height: 2.7rem;
+	text-align: center;
 }
 
 h3.title .spot, h4.title .spot {
@@ -719,7 +720,7 @@ h3.title .spot, h4.title .spot {
 .contents-container {
 	overflow: hidden;
 	position: relative;
-	padding-top: 80px;
+	padding: 80px 0;
 }
 
 .contents-container .contents-inner {
@@ -795,6 +796,38 @@ h3.title .spot, h4.title .spot {
 	margin-top: 10px;
 }
 
+.contents-container .account-wrap {
+	margin-bottom: 80px;
+}
+
+.contents-container .account-wrap .sub-title {
+	margin-top: 8px;
+	font-size: 15px;
+	text-align: center;
+	color: #777;
+}
+
+.contents-container .account-wrap .btn-wrap {
+	display: flex;
+	margin-top: 20px;
+}
+
+.contents-container .account-wrap .btn-wrap .btn {
+	flex: 1;
+	height: 40px;
+	background-color: #311c00;
+	border-radius: 30px;
+	line-height: 40px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	text-align: center;
+}
+
+.contents-container .account-wrap .btn-wrap .btn + .btn {
+	margin-left: 6px;
+}
+
 .contents-container .gallery-wrap {
 	outline: none;
 	margin-bottom: 80px;
@@ -854,9 +887,37 @@ h3.title .spot, h4.title .spot {
 	border: 1px solid #000;
 }
 
+.contents-container .map-wrap {
+	text-align: center;
+}
+
+.contents-container .map-wrap .sub-title {
+	margin-top: 8px;
+	font-size: 15px;
+	color: #777;
+	text-align: center;
+}
+
 .contents-container .map-wrap .map-area {
 	height: 300px;
-	margin-top: 20px;
+	margin: 20px 0 15px;
+	background-color: rgba(255, 0, 0, 0.2);
+}
+
+.contents-container .map-wrap .address {
+	font-size: 1.4rem;
+}
+
+.contents-container .map-wrap .tel-link {
+	display: inline-block;
+	background-color: #f8eede;
+	border-radius: 15px;
+	height: 30px;
+	padding: 0 15px;
+	margin-top: 8px;
+	line-height: 28px;
+	color: #444;
+	font-size: 1.3rem;
 }
 
 .footer-container {
