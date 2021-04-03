@@ -81,13 +81,33 @@ function clipboard(){
 }
 
 //복사버튼 스크립트
-function copyToClipboard(element) {
-	var $temp = $("<input>");
-	$("body").append($temp);
-	$temp.val($(element).text()).select();
-	document.execCommand("copy");
-	$temp.remove();
-	alert("복사되었습니다."); //Optional Alert,
+function copyToClipboard(copyText) {
+	var tmpTextarea = document.createElement('textarea');
+	tmpTextarea.value = copyText;
+
+	document.body.appendChild(tmpTextarea);
+	tmpTextarea.select();
+	tmpTextarea.setSelectionRange(0, 9999);  // 셀렉트 범위 설정
+
+	document.execCommand('copy');
+	document.body.removeChild(tmpTextarea);
+	alert("복사가 완료되었습니다");
+}
+
+function copyToClipboard() {
+	var input = document.querySelector('input');
+	try {
+		input.select();
+		// returnValue: A Boolean that is false if the command is not supported or enabled.
+		var returnValue = document.execCommand('copy');
+		console.debug(returnValue);
+		if (!returnValue) {
+			throw new Error('copied nothing');
+		}
+		alert('복사 되었습니다.');
+	} catch (e) {
+		prompt('Copy to clipboard: Ctrl+C, Enter', input.value);
+	}
 }
 
 /**********************************************************************************
