@@ -3,8 +3,8 @@
  파일명:		reset.css
  설  명:		 css 초기화
  작성자:		glim
- 최초작성일:	  2018/11/30
- 최종수정일:
+ 최초작성일:	  20200/07/01
+ 최종수정일:   2020/07/10
 */
 
 
@@ -28,12 +28,13 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  font-style:normal;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-style: normal;
+	font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
 }
 
 /**********************************************************************************
@@ -42,139 +43,194 @@ common
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
+	display: block;
 }
-html {background:#fff; font-size:10px; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%}
-body {width: 100%; color: #000; background-color:#fff; font-size: 12px; line-height:1;}
 
-/*html, body { touch-action: manipulation; }*/
+html {background: #fff; font-size: 10px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
+
+body {width: 100%; color: #000; background-color: #fff; font-size: 16px; line-height: 1;}
+
+html, body { font-family: 'Montserrat', 'Noto Sans KR', sans-serif; }
 
 ol, ul {
-  list-style: none;
+	list-style: none;
 }
 
-
 blockquote, q {
-  quotes: none;
+	quotes: none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
 }
 
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 select, input, button, textarea {
-    display: inline-block;
-  /*font-family: "Malgun Gothic", 'MalgunGothic', '맑은고딕', sans-serif;*/
-  /*font-size: 12px;*/
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+	display: inline-block;
+	font-family: 'Montserrat', 'Apple SD Gothic Neo', sans-serif;
+	font-size: 12px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 embed, object {
-  position: absolute;
+	position: absolute;
 }
 
 button {
-    padding: 0;
-    margin: 0;
-    vertical-align: top;
-    cursor: pointer;
-    background-color: transparent;
-    border: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: top;
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+}
+
+button:focus,
+input:focus{
+	outline: none;
 }
 
 img {
-  vertical-align: top;
+	vertical-align: top;
 }
+
 input {
-    border: 1px solid #d5d5d5;
-    color: #000;
-    vertical-align: top;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    line-height: 14px;
-    border-radius: 0;
+	/* width: 180px;
+	padding: 6px 10px 6px;
+	height: 30px;
+	border: 1px solid #ddd;
+	color: #111; */
+	vertical-align: top;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	line-height: 14px;
+	border-radius: 0;
 }
+
 textarea[disabled],
 textarea[readonly],
 select[disabled],
 select[readonly],
 input[disabled],
 input[readonly] {
-    border: 1px solid #d5d5d5;
-    background-color: #f8f8f8;
-    color: #999;
+	background-color: #f8f8f8;
+	color: #bbb;
+	cursor: default !important;
 }
 
-textarea{
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    height: 100px;
-    padding: 10px 11px;
-    border: 1px solid #ccc;
-    color: #000;
-    line-height: 16px;
-    border-radius: 0;
-    vertical-align: top;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    resize: none;
+input[disabled] + label,
+input[readonly] + label {
+	cursor: default !important;
 }
 
-select{
-    padding: 0 26px 0 10px;
-    border: 1px solid #ddd;
-    vertical-align: top;
-    color: #111;
-    /*background: #fff url(../../images/ui/ui_select_arr.png) right center no-repeat;*/
-    cursor: pointer;
-    line-height: 16px;
-    border-radius: 0;
-    /*-webkit-appearance: none;*/
-    /*-moz-appearance: none;*/
-    /*-o-appearance: none;*/
-    /*appearance: none;*/
+textarea {
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	height: 110px;
+	padding: 7px 10px 7px;
+	border: 1px solid #ddd;
+	color: #111;
+	line-height: 16px;
+	border-radius: 0;
+	vertical-align: top;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
-select::-ms-expand{
-    display: none;
+
+select {
+	width: 180px;
+	height: 30px;
+	padding: 4px 26px 5px 10px;
+	border: 1px solid #ddd;
+	vertical-align: top;
+	color: #111;
+	/*background: #fff url(../../images/ui/ui_select_arr.png) right center no-repeat;*/
+	cursor: pointer;
+	line-height: 16px;
+	border-radius: 0;
+	border: solid 1px #ddd;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
 }
+
+select::-ms-expand {
+	display: none;
+}
+
+select[disabled],
+	/*select[readonly] { background: #f8f8f8 url(../../images/ui/ui_select_arr_disabled.png) right center no-repeat; }*/
+
+input::-webkit-input-placeholder { color: #999; line-height: 14px; }
+
+/* 크롬 4–56 : placeholder style */
+input:-moz-placeholder { color: #999; line-height: 14px; }
+
+/* 파이어폭스 4–18 : placeholder style */
+input::-moz-placeholder { color: #999; line-height: 14px; }
+
+/* 파이어폭스 19–50 : placeholder style */
+input:-ms-input-placeholder { color: #999; line-height: 14px; }
+
+/* 인터넷 익스플로러 10+ : placeholder style */
+input::-webkit-input-placeholder { color: #999; line-height: 14px; }
+
+input:-ms-input-placeholder { color: #999; line-height: 14px; }
+
+input::-ms-input-placeholder { color: #999; line-height: 14px; }
+
+input::placeholder { color: #999; line-height: 14px; }
+
+/* 파이어폭스 51+, 크롬 57+ : placeholder style */
+
+input[type=button]:hover {cursor: pointer;}
+
+input[type=button]:disabled {cursor: default;}
 
 *, *:before, *:after {-webkit-box-sizing: border-box;box-sizing: border-box;}
 
-button, input, select, textarea {margin:0; font-size:100%; vertical-align:top; border-radius: 0; -webkit-border-radius: 0; appearance: none; -webkit-appearance: none; }
+button, input, select, textarea {margin: 0; font-size: 100%; vertical-align: top; }
+
 button {vertical-align: top; cursor: pointer;}
+
 strong {font-weight: 700;}
-h1, h2, h3, h4, h5, h6, pre {font-weight:400; font-size:100%; line-height:1;}
-caption, legend {width:0; height:0; font-size:1px; text-indent:-9999rem; line-height:0; margin:0; padding:0; border:0; }
-a, a:active, a:focus, a:hover, a:link, a:visited { text-decoration:none;}
+
+h1, h2, h3, h4, h5, h6, pre {font-weight: 400; font-size: 100%; line-height: 1;}
+
+caption, legend {width: 0; height: 0; font-size: 1px; text-indent: -9999rem; line-height: 0; margin: 0; padding: 0; border: 0; }
+
+a, a:active, a:focus, a:hover, a:link, a:visited { text-decoration: none;}
+
 a.disabled,
-button[disabled] {
-    pointer-events: none;
-    cursor: default;
+button[disabled],
+input[disabled] {
+	pointer-events: none;
+	cursor: default;
 }
-input {-webkit-appearance: none;}
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
-}
+
 input::-ms-clear {display: none;}
+
+.offscreen {display: inline-block;overflow: hidden;position: absolute;width: 1px;height: 1px;font-size: 1px;line-height: 0;clip: rect(1px 1px 1px 1px);}
+
+::selection {background: #0039ba;color:#fff;}
+
+::-moz-selection {background: #0039ba;color:#fff;}

@@ -1,0 +1,24 @@
+// font
+$fontMix: 'Montserrat', 'Noto Sans KR', sans-serif;
+
+$defaultFontSize: 1.4rem;
+
+// color
+$defaultTextColor: #000;
+$pointColorBlue: #311c00;
+$pointColorPurple: #f8eede;
+$textColorWhite : #fff;
+
+// size
+$contentsWidth: 1200px;
+
+// break point
+$breakpointPc: 1200px;
+$breakpointMobile: 768px;
+
+
+// transition
+$transDefaultTime: 200ms;
+$transDefaultEase: ease-out;
+$transEaseBounceBack: cubic-bezier(.17, .67, .29, 1.32);
+

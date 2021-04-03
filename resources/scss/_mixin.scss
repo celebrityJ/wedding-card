@@ -1,0 +1,158 @@
+@import 'vars';
+
+%hidden {
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+
+%no-select-text {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 0;
+		clear: both;
+	}
+}
+
+// single line ellpsis
+@mixin ellipsis($autoWidth: true, $isInline: true, $clearLineHeight: true) {
+	@if ($isInline) {
+		display: inline-block;
+	}
+	@if ($autoWidth) {
+		width: 100%;
+	}
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@if ($clearLineHeight) {
+		line-height: normal;
+	}
+}
+
+// multi line ellipsis
+@mixin multi_ellipsis($line-height, $lines: 2, $useHeight: true) {
+	overflow: hidden;
+	@if $useHeight {
+		height: $line-height * $lines;
+	}
+	max-height: $line-height * $lines;
+	line-height: $line-height;
+
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
+
+	text-overflow: -o-ellipsis-lastline;
+}
+
+// Display Flex
+@mixin justify_width($isReverse: false, $type: 'between') {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	display: -webkit-flex;
+	@if ($type == 'between') {
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-justify-content: space-between;
+	} @else if ($type == 'around') {
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+		-webkit-justify-content: space-around;
+	} @else if ($type == 'center') {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-justify-content: center;
+	} @else if ($type == 'start') {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	}
+
+	@if $isReverse {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse;
+	}
+}
+
+@mixin calc_letter_spacing($psValue, $fontSize: 1rem) {
+	@if ($fontSize != 1rem) {
+		font-size: $fontSize;
+	}
+	letter-spacing: ($psValue * convertRemToPx($fontSize) / 1000);
+}
+
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1);
+}
+
+@function convertRemToPx($size) {
+	$value: parseInt($size) * $defaultFontSize;
+	@return round($value);
+}
+
+@mixin set_placeholder_color($color: $textColorLightGray ) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+
+	&::-ms-input-placeholder {
+		color: $color;
+	}
+
+	&::placeholder {
+		color: $color;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		color: $color;
+	}
+}
+
+/* media query */
+@mixin mobile { // ~768
+	@media (max-width: #{$breakpointMobile}) {
+		@content;
+	}
+}
+
+@mixin tablet { // 769 ~  1199
+	@media (min-width: #{$breakpointMobile + 1px}) and (max-width: #{$breakpointPc + 40px}) {
+		@content;
+	}
+}
+
+@mixin desktop { // 769~
+	@media (min-width: #{$breakpointMobile + 1px}) {
+		@content;
+	}
+}
