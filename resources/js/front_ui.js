@@ -21,6 +21,9 @@ $(function () {
 			$('.js-animation').addClass('is-complete');
 		});
 	});
+
+	var wh = $(window).height();
+	$('.main-banner-wrap').height(wh);
 });
 
 $(window).on('resize', function () {
