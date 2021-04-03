@@ -697,6 +697,42 @@ h3.title .spot, h4.title .spot {
 	margin-left: 6px;
 }
 
+.contents-container .account-wrap .call-info-box {
+	display: flex;
+	margin-top: 20px;
+}
+
+.contents-container .account-wrap .call-info-box .info-box {
+	flex: 1;
+	text-align: center;
+}
+
+.contents-container .account-wrap .call-info-box .info-box .info-title {
+	font-size: 14px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.contents-container .account-wrap .call-info-box .info-box a {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: top;
+	border-radius: 100%;
+}
+
+.contents-container .account-wrap .call-info-box .info-box a + a {
+	margin-left: 10px;
+}
+
+.contents-container .account-wrap .call-info-box .info-box .tel {
+	background: #311c00 url(../images/ico_phone.png) center/10px auto no-repeat;
+}
+
+.contents-container .account-wrap .call-info-box .info-box .msg {
+	background: #311c00 url(../images/ico_msg.png) 8px 7px/15px auto no-repeat;
+}
+
 .contents-container .gallery-wrap {
 	outline: none;
 	margin-bottom: 80px;

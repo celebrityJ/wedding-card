@@ -576,6 +576,42 @@ h3.title, h4.title{
 				}
 			}
 		}
+
+		.call-info-box{
+			display: flex;
+			margin-top: 20px;
+
+			.info-box{
+				flex: 1;
+				text-align: center;
+
+				.info-title{
+					font-size: 14px;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+
+				a{
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					vertical-align: top;
+					border-radius: 100%;
+
+					+ a{
+						margin-left: 10px;
+					}
+				}
+
+				.tel{
+					background: $pointColorBlue url(../images/ico_phone.png) center / 10px auto no-repeat;
+				}
+
+				.msg{
+					background: $pointColorBlue url(../images/ico_msg.png) 8px 7px / 15px auto no-repeat;
+				}
+			}
+		}
 	}
 
 	.gallery-wrap{
