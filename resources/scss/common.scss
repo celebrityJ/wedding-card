@@ -30,16 +30,8 @@ html, body{-webkit-overflow-scrolling: touch; font-family: $fontMix;}
 h3.title, h4.title{
 	overflow: hidden;
 	font-weight: 200;
-
-	@include desktop{
-		@include calc_letter_spacing(-50, 5.8rem);
-		line-height: 7.5rem;
-	}
-
-	@include mobile{
-		font-size: 3.2rem;
-		line-height: 4rem;
-	}
+	font-size: 2.8rem;
+	line-height: 3.2rem;
 
 	.spot{
 		color: $pointColorBlue;
@@ -799,7 +791,7 @@ h3.title, h4.title{
 
 	.gallery-wrap{
 		outline: none;
-		margin-bottom: 50px;
+		margin-bottom: 80px;
 
 		.title{
 			margin-bottom: 30px;
@@ -859,6 +851,12 @@ h3.title, h4.title{
 					}
 				}
 			}
+		}
+	}
+
+	.map-wrap{
+		.map-area{
+			height: 400px;
 		}
 	}
 }

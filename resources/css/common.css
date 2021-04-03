@@ -45,21 +45,8 @@ html, body {
 h3.title, h4.title {
 	overflow: hidden;
 	font-weight: 200;
-}
-
-@media (min-width: 769px) {
-	h3.title, h4.title {
-		font-size: 5.8rem;
-		letter-spacing: -0.4rem;
-		line-height: 7.5rem;
-	}
-}
-
-@media (max-width: 768px) {
-	h3.title, h4.title {
-		font-size: 3.2rem;
-		line-height: 4rem;
-	}
+	font-size: 2.8rem;
+	line-height: 3.2rem;
 }
 
 h3.title .spot, h4.title .spot {
@@ -810,7 +797,7 @@ h3.title .spot, h4.title .spot {
 
 .contents-container .gallery-wrap {
 	outline: none;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 }
 
 .contents-container .gallery-wrap .title {
@@ -865,6 +852,10 @@ h3.title .spot, h4.title .spot {
 	width: 100%;
 	height: 100%;
 	border: 1px solid #000;
+}
+
+.contents-container .map-wrap .map-area {
+	height: 400px;
 }
 
 .footer-container {
