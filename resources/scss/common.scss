@@ -378,7 +378,7 @@ h3.title, h4.title{
 		}
 
 		.banner-txt{
-			font-weight: 400;
+			font-weight: 500;
 			@include calc_letter_spacing(-25, 2.8rem);
 			line-height: 4.1rem;
 			text-align: center;
@@ -390,6 +390,7 @@ h3.title, h4.title{
 			text-align: center;
 			@include calc_letter_spacing(-25, 1.7rem);
 			line-height: 2.2rem;
+			font-weight: 500;
 
 			.fw-bold{
 				font-weight: 700;

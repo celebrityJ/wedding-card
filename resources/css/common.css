@@ -91,6 +91,14 @@
 	font-weight: 600;
 }
 
+.ui-dialog .ui-dialog-contents .dialog-contents .name ~ .name {
+	margin-top: 20px;
+}
+
+.ui-dialog .ui-dialog-contents .dialog-contents .account {
+	display: block;
+}
+
 .ui-dialog .ui-dialog-contents .btn-wrap {
 	margin-top: 30px;
 }
@@ -517,7 +525,7 @@ h3.title .spot, h4.title .spot {
 }
 
 .header-container .main-banner-wrap .banner-txt {
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 2.8rem;
 	letter-spacing: -0.1rem;
 	line-height: 4.1rem;
@@ -530,6 +538,7 @@ h3.title .spot, h4.title .spot {
 	font-size: 1.7rem;
 	letter-spacing: -0.05rem;
 	line-height: 2.2rem;
+	font-weight: 500;
 }
 
 .header-container .main-banner-wrap .banner-stxt .fw-bold {
