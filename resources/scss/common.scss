@@ -742,6 +742,30 @@ h3.title, h4.title{
 				}
 			}
 		}
+
+		.transport-title{
+			display: block;
+			color: #222;
+			margin-top: 30px;
+			font-size: 1.5rem;
+			line-height: 2rem;
+			text-align: left;
+
+			~ .transport-title{
+				margin-top: 15px;
+			}
+		}
+
+		.transport-desc{
+			display: block;
+			color: #777;
+			margin-top: 5px;
+			font-size: 1.3rem;
+			line-height: 1.8rem;
+			text-align: left;
+			word-break: keep-all;
+
+		}
 	}
 
 }
