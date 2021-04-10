@@ -525,6 +525,7 @@ h3.title .spot, h4.title .spot {
 }
 
 .header-container .main-banner-wrap .banner-txt {
+	margin-top: -200px;
 	font-weight: 500;
 	font-size: 2.8rem;
 	letter-spacing: -0.1rem;
@@ -681,7 +682,11 @@ h3.title .spot, h4.title .spot {
 }
 
 .contents-container .account-wrap {
-	margin-bottom: 80px;
+	margin-top: 80px;
+}
+
+.contents-container .account-wrap .title {
+	font-weight: 400;
 }
 
 .contents-container .account-wrap .sub-title {
