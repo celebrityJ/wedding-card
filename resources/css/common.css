@@ -686,6 +686,7 @@ h3.title .spot, h4.title .spot {
 }
 
 .contents-container .account-wrap .title {
+	font-size: 20px;
 	font-weight: 400;
 }
 
