@@ -561,6 +561,7 @@ h3.title, h4.title{
 			font-size: 15px;
 			text-align: center;
 			color: #777;
+			word-break: keep-all;  
 		}
 
 		.btn-wrap{
@@ -575,7 +576,7 @@ h3.title, h4.title{
 				line-height: 40px;
 				color: #fff;
 				font-weight: 600;
-				font-size: 14px;
+				font-size: 13px;
 				text-align: center;
 
 				+ .btn{

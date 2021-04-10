@@ -695,6 +695,7 @@ h3.title .spot, h4.title .spot {
 	font-size: 15px;
 	text-align: center;
 	color: #777;
+	word-break: keep-all;
 }
 
 .contents-container .account-wrap .btn-wrap {
@@ -710,7 +711,7 @@ h3.title .spot, h4.title .spot {
 	line-height: 40px;
 	color: #fff;
 	font-weight: 600;
-	font-size: 14px;
+	font-size: 13px;
 	text-align: center;
 }
 
